@@ -1,7 +1,7 @@
 import os
 ##################
 if __name__ == '__main__':
-    # <editor-folder desc="1.BA">
+    # <editor-folder desc="1. BA">
     os.system('screen -dmS BA1 python ./run.py -n BA_UNIOA -o UNIOA_BA_syncE_syncG')
     os.system('screen -dmS BA2 python ./run.py -n BA_UNIOA_asyncE_syncG -o UNIOA_BA_asyncE_syncG')
     os.system('screen -dmS BA3 python ./run.py -n BA_SEP -o SEP_BA_asyncE_asyncG')
