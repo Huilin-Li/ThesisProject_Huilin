@@ -33,10 +33,9 @@ def optimizer_running(problems, instances, dimensions, num_runs, paras_set, opti
                     opt()
                     func.reset()
                 print('', end=')', flush=True)
-   # func.clear_logger()
 
     print('costs', round((time.time() - st) / 60, 2), 'minutes')
-    with open("DataFiles/runningtime.txt", "a+") as text_file:
+    with open("DataFiles/runningtime_"+ W + ".txt", "a+") as text_file:
         date = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
         runningtime = round((time.time() - st) / 60, 2)
         print("{} | {}: {} minutes.".format(date, output_name, runningtime), file=text_file)

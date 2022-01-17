@@ -1,5 +1,6 @@
 # Thesis Project
 
+Click [here](https://universiteitleiden.zoom.us/j/2673710181?pwd=eWdrOUloWTcvSDFvVTJ2TzgwdTBvdz09) to access all data used in this thesis project.
 # File Structure
 
 # Usage
