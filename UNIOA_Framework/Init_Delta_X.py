@@ -16,7 +16,7 @@ class Init_Delta_X:
 
     @staticmethod
     def Sort_X(new_X, new_X_Fit):
-        sort_X_ind = np.argsort(new_X_Fit)# from minimum value to maximum value
+        sort_X_ind = np.argsort(new_X_Fit) # from minimum value to maximum value
         sort_X = new_X[sort_X_ind]
         sort_X_Fit = new_X_Fit[sort_X_ind]
         return sort_X, sort_X_Fit

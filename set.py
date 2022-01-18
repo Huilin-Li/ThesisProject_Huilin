@@ -11,8 +11,8 @@ from datetime import datetime
 
 
 def optimizer_running(problems, instances, dimensions, num_runs, paras_set, optimizer_name, output_name):
-    W = output_name.split("_")[1]
-    folder_name = W + '_folder'
+    Which_alg = output_name.split("_")[1]
+    folder_name = Which_alg + '_folder'
     data_name = output_name
     st = time.time()
     print('--->   ' + output_name + ' is optmizting', flush=True)
@@ -35,7 +35,7 @@ def optimizer_running(problems, instances, dimensions, num_runs, paras_set, opti
                 print('', end=')', flush=True)
 
     print('costs', round((time.time() - st) / 60, 2), 'minutes')
-    with open("DataFiles/runningtime_"+ W + ".txt", "a+") as text_file:
+    with open("DataFiles/runningtime_" + Which_alg + ".txt", "a+") as text_file:
         date = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
         runningtime = round((time.time() - st) / 60, 2)
         print("{} | {}: {} minutes.".format(date, output_name, runningtime), file=text_file)

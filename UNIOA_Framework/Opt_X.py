@@ -52,7 +52,6 @@ class Opt_X:
         return new_X
 
     @staticmethod
-    #@jit(parallel=True)
     def goa_but_asyncE(func, old_X, old_X_Fit, old_x_g, z, lb_x, ub_x, w1, w2):
         M, n = old_X.shape[0], old_X.shape[1]
         new_X = old_X.copy()
@@ -170,7 +169,6 @@ class Opt_X:
         return temp_X
 
     @staticmethod
-    #@jit(parallel=True)
     def mbo_but_asyncE(func, old_X, old_X_Fit, x_g, z, w1, w2, w3, budget):
         M, n = old_X.shape[0], old_X.shape[1]
         I_s = np.argsort(old_X_Fit)

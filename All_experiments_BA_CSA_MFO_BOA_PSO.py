@@ -1,15 +1,16 @@
 import os
+import subprocess
 ##################
 if __name__ == '__main__':
     # <editor-folder desc="1. BA">
-    os.system('screen -dmS BA1 python ./run.py -n BA_UNIOA -o UNIOA_BA_syncE_syncG')
-    os.system('screen -dmS BA2 python ./run.py -n BA_UNIOA_asyncE_syncG -o UNIOA_BA_asyncE_syncG')
-    os.system('screen -dmS BA3 python ./run.py -n BA_SEP -o SEP_BA_asyncE_asyncG')
-    os.system('screen -dmS BA4 python ./run.py -n BA_SEP_syncE_syncG -o SEP_BA_syncE_syncG')
-    os.system('screen -dmS BA5 python ./run.py -n BA_SEP_fix -o SEP_BA_asyncE_syncG')
+    subprocess.call(['screen -dmS BA1 python ./run.py -n BA_UNIOA -o UNIOA_BA_syncE_syncG'], shell=True)
+    subprocess.call(['screen -dmS BA2 python ./run.py -n BA_UNIOA_asyncE_syncG -o UNIOA_BA_asyncE_syncG'], shell=True)
+    subprocess.call(['screen -dmS BA3 python ./run.py -n BA_SEP -o SEP_BA_asyncE_asyncG'], shell=True)
+    subprocess.call(['screen -dmS BA4 python ./run.py -n BA_SEP_syncE_syncG -o SEP_BA_syncE_syncG'], shell=True)
+    subprocess.call(['screen -dmS BA5 python ./run.py -n BA_SEP_fix -o SEP_BA_asyncE_syncG'], shell=True)
     #
-    os.system('screen -dmS BA01 python ./run.py -n BA_SEP_fix -o SEP_BA_fix')
-    os.system('screen -dmS BA02 python ./run.py -n BA_UNIOA -o UNIOA_BA')
+    subprocess.call(['screen -dmS BA01 python ./run.py -n BA_SEP_fix -o SEP_BA_fix'], shell=True)
+    subprocess.call(['screen -dmS BA02 python ./run.py -n BA_UNIOA -o UNIOA_BA'], shell=True)
     # </editor-folder>
 
     # <editor-folder desc="3. CSA">

@@ -27,33 +27,6 @@ class NatureOpt:
         fitness = [self.fitness_function(x) for x in X]
         return np.array(fitness)
 
-    # def Personal_best(self, new_X, new_X_Fit, old_X_p = None, old_X_p_Fit = None):
-    #     if old_X_p is None:
-    #         new_X_p = new_X
-    #         new_X_p_Fit = new_X_Fit
-    #         return new_X_p, new_X_p_Fit
-    #     else:
-    #         new_X_p = old_X_p
-    #         new_X_p_Fit = old_X_p_Fit
-    #         for i, x in enumerate(new_X):
-    #             if new_X_Fit[i] < old_X_p_Fit[i]:
-    #                 new_X_p[i] = x
-    #                 new_X_p_Fit[i] = new_X_Fit[i]
-    #         return new_X_p, new_X_p_Fit
-    #
-    # def Global_best(self, new_X, new_X_Fit, old_x_g = None, old_x_g_fit = None):
-    #     if old_x_g is None:
-    #         best_index = np.argmin(new_X_Fit)
-    #         x_g_fit = new_X_Fit[best_index]
-    #         x_g = new_X[best_index]
-    #         return x_g, x_g_fit
-    #     else:
-    #         xs = np.append([old_x_g],new_X, axis=0)
-    #         fits = np.append([old_x_g_fit], new_X_Fit, axis=0)
-    #         best_index = np.argmin(fits)
-    #         x_g_fit = fits[best_index]
-    #         x_g = xs[best_index]
-    #         return x_g, x_g_fit
 
     @property
     def stop(self):
