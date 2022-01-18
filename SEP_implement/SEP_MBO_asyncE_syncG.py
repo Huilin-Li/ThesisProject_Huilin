@@ -48,7 +48,7 @@ class MBO_SEP_asyncE_syncG(NatureOpt):
                         x = NewPopulation2[i, j] + scale * delataX[j]
                         NewPopulation2[i, j] = np.clip(x, lb_x, ub_x)
             NewPopulation2_f[i] = func(NewPopulation2[i])
-            return NewPopulation2, NewPopulation2_f
+        return NewPopulation2, NewPopulation2_f
 
     def __call__(self):
         numButterfly1 = np.ceil(self.partition*self.M).astype(int)

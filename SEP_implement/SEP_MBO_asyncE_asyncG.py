@@ -56,7 +56,7 @@ class MBO_SEP_asyncE_asyncG(NatureOpt):
             if NewPopulation2_f[i] < x_g_f:
                 x_g = NewPopulation2[i]
                 x_g_f = NewPopulation2_f[i]
-            return NewPopulation2, NewPopulation2_f
+        return NewPopulation2, NewPopulation2_f
 
     def __call__(self):
         numButterfly1 = np.ceil(self.partition*self.M).astype(int)
