@@ -20,7 +20,7 @@ from .SEP_MFO_asyncE import MFO_SEP_asyncE # a
 from .SEP_MBO import MBO_SEP # ss
 from .SEP_MBO_asyncE_syncG import MBO_SEP_asyncE_syncG # as
 from .SEP_MBO_asyncE_asyncG import MBO_SEP_asyncE_asyncG # aa
-
+from .SEP_MBO_one import MBO_SEP_ONE
 
 # BOA
 from .SEP_BOA_syncE_syncG import BOA_SEP_syncE_syncG # ss

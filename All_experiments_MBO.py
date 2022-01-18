@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
 
 
-
+    subprocess.call(['screen -dmS MBO031 python ./run.py -n MBO_SEP_ONE -o SEP_MBO_ONE'],shell=True)
 
 
 

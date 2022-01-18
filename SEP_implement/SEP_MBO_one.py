@@ -14,7 +14,7 @@ from UNIOA_Framework.LevyFlight import Levy
 # [3]C. Doerr, H. Wang, F. Ye, S. van Rijn, and T. Bäck, ‘IOHprofiler: A Benchmarking and Profiling Tool for Iterative Optimization Heuristics’, arXiv:1810.05281 [cs], Oct. 2018, Accessed: Sep. 19, 2021. [Online]. Available: http://arxiv.org/abs/1810.05281
 # -------------------------------------------------------------------------------------------
 
-class MBO_SEP(NatureOpt):
+class MBO_SEP_ONE(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 50)
@@ -89,7 +89,7 @@ class MBO_SEP(NatureOpt):
                                                 period=self.period,
                                                 partition=self.partition)
             # evaluate new population1
-            NewPop1_fitness = self.Evaluate_X(X = NewPopulation1)
+            #NewPop1_fitness = self.Evaluate_X(X = NewPopulation1)
 
 
             # adjusting
@@ -99,11 +99,11 @@ class MBO_SEP(NatureOpt):
                                                 lb_x=self.lb_x, ub_x=self.ub_x)
 
             # evluate new pop2
-            NewPop2_fitness = self.Evaluate_X(X=NewPopulation2)
+            #NewPop2_fitness = self.Evaluate_X(X=NewPopulation2)
 
             # Combine Population1 with Population2 to generate a new Population
             population = np.concatenate((NewPopulation1, NewPopulation2))
-            fitness = np.concatenate((NewPop1_fitness, NewPop2_fitness))
+            fitness = self.Evaluate_X(X=population)
             # Sort from best to worst
             I_s = np.argsort(fitness)
             sorted_pop = population[I_s]
