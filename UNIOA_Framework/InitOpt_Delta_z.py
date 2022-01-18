@@ -1,4 +1,4 @@
-import  numpy as np
+import numpy as np
 
 class InitOpt_Delta_z:
     @staticmethod
