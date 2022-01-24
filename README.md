@@ -1,6 +1,12 @@
 # Thesis Project
 
-Click [here](https://universiteitleiden.zoom.us/j/2673710181?pwd=eWdrOUloWTcvSDFvVTJ2TzgwdTBvdz09) to access all data used in this thesis project.
+Click [here](https://surfdrive.surf.nl/files/index.php/s/sffBTtaFT5Yynrx) to access all data and referenced papers used in this thesis project.
+
+# Data Science Lab
+1. mithril.liacs.nl
+2. octiron.liacs.nl
+3. duranium.liacs.nl
+
 # File Structure
 
 # Usage
