@@ -3,17 +3,8 @@ import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
 
 
-# -------------------------------------------------------------------------------------------
-# The file is a translation of Bat-Optimizer\cite{1,2} from MatLab to Python.
-# This Python version code suits our experiment cases in IOHanalyzer\cite{3}.
-# The execution logic is same as the original implementation in \cite{2}.
-# -------------------------------------------------------------------------------------------
-# References:
-# [1]X.-S. Yang, ‘A New Metaheuristic Bat-Inspired Algorithm’, arXiv:1004.4170 [physics], Apr. 2010, Accessed: Jun. 11, 2021. [Online]. Available: http://arxiv.org/abs/1004.4170
-# [2]https://uk.mathworks.com/matlabcentral/fileexchange/74768-the-standard-bat-algorithm-ba?s_tid=prof_contriblnk
-# [3]C. Doerr, H. Wang, F. Ye, S. van Rijn, and T. Bäck, ‘IOHprofiler: A Benchmarking and Profiling Tool for Iterative Optimization Heuristics’, arXiv:1810.05281 [cs], Oct. 2018, Accessed: Sep. 19, 2021. [Online]. Available: http://arxiv.org/abs/1810.05281
-# -------------------------------------------------------------------------------------------
-
+# original BA framework
+# but both Global calculation and Evaluation are synchronous
 
 class BA_SEP_syncE_syncG(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):

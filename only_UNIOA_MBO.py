@@ -107,11 +107,6 @@ if __name__ == '__main__':
     subprocess.call(['screen -dmS MBO0224 python ./run.py -n MBO_UNIOA -o UNIOA_MBO -p 24'], shell=True)
     # </editor-folder>
 
-    #
-    #
-    # subprocess.call(['screen -dmS MBO031 python ./run.py -n MBO_SEP_ONE -o SEP_MBO_ONE'],shell=True)
-    #
-
 
 
 

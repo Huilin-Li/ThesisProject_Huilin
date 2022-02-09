@@ -24,11 +24,11 @@ def optimizer_running(problems, instances, dimensions, num_runs, paras_set, opti
             for i_id in instances:
                 print('{}'.format(i_id), end="", flush=True)
                 func = ioh.get_problem(fid=p_id, dim=d, iid=i_id)
-                # func.attach_logger(logger)
                 print('', end='(', flush=True)
                 for rep in range(num_runs):
-                    func.attach_logger(logger)
+                    #func.attach_logger(logger)
                     print('{}'.format(rep), end="", flush=True)
+                    func.attach_logger(logger)
                     opt = eval(optimizer_name)(func, paras_set)
                     opt()
                     func.reset()

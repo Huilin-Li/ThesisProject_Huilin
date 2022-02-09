@@ -2,13 +2,11 @@ import argparse
 from set import *
 
 
-
-
 parser = argparse.ArgumentParser(description='Execute Experiments on IOHanalyzer.')
 parser.add_argument('-n', '--name', type=str, required=True, metavar='',
                     help='Optimizer will be executing.')
 parser.add_argument('-o', '--outputname', type=str, required=True, metavar='',
-                    help='Optimizer will be executing.')
+                    help='Data folder name.')
 parser.add_argument('-p','--problems', type=str, default= '1:24', metavar='',
                     help='Problems used to optimize (default: from Problem-1 to Problem-24).')
 parser.add_argument('-d', '--dimensions', type=str, default='5,20', metavar='',
@@ -39,20 +37,6 @@ if __name__ == "__main__":
 
     print('######################################################################################')
     optimizer_running(problems, instances, dimensions, num_runs, paras_set, optimizer_name, output_name)
-
-    # dir = optimizer_name + '_folder'
-    # folder_name = os.listdir(dir)[-1]
-    # os.chdir(dir)
-    # shutil.make_archive(folder_name, 'zip')
-    # os.rename(folder_name+'.zip', optimizer_name+'.zip')
-
-
-    # name is the class name
-    # raw_optimizer_names = ['raw_BA_Opt', 'CSA_SEP', 'raw_MFO_Opt', 'raw_PSOOpt',
-    #                        'GOA_SEP', 'raw_MBO_Opt', 'raw_BOA_Opt']
-    #
-    # my_optimizer_names = ['BA_UNIOA', 'CSA_Opt', 'MFO_UNIOA', 'PSO_UNIOA',
-    #                       'GOA_UNIOA', 'MBO_UNIOA', 'BOA_Opt']
 
 
 
