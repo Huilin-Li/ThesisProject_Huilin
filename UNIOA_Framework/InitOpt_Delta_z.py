@@ -22,7 +22,7 @@ class InitOpt_Delta_z:
     def boa(t, old_z, budget):
         # sensory_modality_update in original paper
         if t == 0:
-            new_z = old_z
+            new_z = old_z.copy()
             return new_z
         else:
             new_z = old_z + 0.025 / (old_z*budget)

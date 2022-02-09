@@ -21,14 +21,15 @@ class MFO_SEP_asyncE(NatureOpt):
             # Number of flames Eq. (3.14) in the paper
             Flame_no = round(self.M - Iteration * ((self.M - 1) / self.budget))
 
+
             if Iteration == 0:
                 # Sort the first population of moths
                 fitness_sorted = np.sort(Moth_fitness)
                 I = np.argsort(Moth_fitness)
                 sorted_population = Moth_pos[I]
                 # Update the flames
-                best_flames = sorted_population
-                best_flame_fitness = fitness_sorted
+                best_flames = sorted_population.copy()
+                best_flame_fitness = fitness_sorted.copy()
             else:
                 # Sort the moths
                 double_population = np.concatenate((previous_population, best_flames), axis=0)
@@ -40,11 +41,11 @@ class MFO_SEP_asyncE(NatureOpt):
                 fitness_sorted = double_fitness_sorted[0:self.M]
                 sorted_population = double_sorted_population[0:self.M]
                 # Update the flames
-                best_flames = sorted_population
-                best_flame_fitness = fitness_sorted
+                best_flames = sorted_population.copy()
+                best_flame_fitness = fitness_sorted.copy()
 
-            previous_population = Moth_pos
-            previous_fitness = Moth_fitness
+            previous_population = Moth_pos.copy()
+            previous_fitness = Moth_fitness.copy()
 
             # a linearly dicreases from -1 to -2 to calculate t in Eq. (3.12)
             a = -1 + Iteration * ((-1) / self.budget)
@@ -55,36 +56,13 @@ class MFO_SEP_asyncE(NatureOpt):
                 t = (a - 1) * np.random.rand() + 1
                 for j in range(0, self.n):
                     distance_to_flame = abs(sorted_population[i, j] - Moth_pos[i, j])
-                    if i <= Flame_no:  # Update the position of the moth with respect to its corresponsing flame
-                        # D in Eq. (3.13)
-                        # Eq. (3.12)
+                    if i <= Flame_no:
                         Moth_pos[i, j] = distance_to_flame * math.exp(b * t) * math.cos(t * 2 * math.pi)+ sorted_population[i, j]
                     else:
-                        # Upaate the position of the moth with respct to one flame
-                        #  Eq. (3.13)
-                        #  Eq. (3.12)
                         Moth_pos[i, j] = distance_to_flame * math.exp(b * t) * math.cos(t * 2 * math.pi) + sorted_population[Flame_no, j]
                 # check boundary
                 Moth_pos[i] = np.clip(Moth_pos[i], self.lb_x, self.ub_x)
                 Moth_fitness[i] = self.fitness_function(Moth_pos[i])
 
+            #Moth_fitness = self.Evaluate_X(X=Moth_pos)
             Iteration = Iteration + 1
-    
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-
-    
-   
-        
-            
- 

@@ -1,4 +1,42 @@
 # Thesis Project
+- [ Overview. ](#ov)
+- [ Experiment details. ](#ep)
+- [ Environment. ](#env)
+- [ Example. ](#exm)
+  - [ customized optimizer. ](#exm1)
+  - [ benchmark and comparison. ](#exm2)
+  - [ results of example experiment. ](#exm3)
+- [ Versions. ](#ver)
+
+<a name="ov"></a>
+## Overview
+1. motivation of this project:
+   1. recently proposed nature-inspired algorithms are not such novel and not such mysterious.
+   2. because they are repeating same concepts/ideas of some old typical algorithms.
+   3. this problem will mislead the research community(e.g. Algorithm design is no longer concerned with whether it really proposes an effect algorithm, but only with whether there is a new name algorithm)
+2. solution to the problem:
+    1. the novelty/special parts of algorithms will be easier to be found, if these algorithms could be discussed in only one environment.
+    2. this only one environment is such a place in which algorithms use same terminologies, 
+
+3. experiments to prove the solution is correct:
+
+4. conclusion:
+
+5. shortcomings:
+   
+6. comparison with other relative papers:
+
+6. future imagination:
+
+<a name="ep"></a>
+## Experiment details
+
+
+
+
+
+
+
 
 Click [here](https://surfdrive.surf.nl/files/index.php/s/sffBTtaFT5Yynrx) to access all data and referenced papers used in this thesis project.
 
