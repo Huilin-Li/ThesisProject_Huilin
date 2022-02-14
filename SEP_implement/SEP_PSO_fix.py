@@ -9,7 +9,6 @@ class PSO_SEP_fix(NatureOpt):
         self.M = hyperparams_set.get('popsize', 25)
 
 
-
     def __call__(self):
         X = np.random.uniform(self.lb_x, self.ub_x, (self.M, self.n))
         fitness = self.Evaluate_X(X=X)
