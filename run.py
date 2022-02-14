@@ -2,15 +2,15 @@ import argparse
 from set import *
 
 
-parser = argparse.ArgumentParser(description='Execute Experiments on IOHanalyzer.')
+parser = argparse.ArgumentParser(description='Execute Experiments in IOHexperimenter.')
 parser.add_argument('-n', '--name', type=str, required=True, metavar='',
-                    help='Optimizer will be executing.')
-parser.add_argument('-o', '--outputname', type=str, required=True, metavar='',
+                    help='Optimizer name.')
+parser.add_argument('-o', '--OutputFileName', type=str, required=True, metavar='',
                     help='Data folder name.')
 parser.add_argument('-p','--problems', type=str, default= '1:24', metavar='',
-                    help='Problems used to optimize (default: from Problem-1 to Problem-24).')
+                    help='Problems used in experiments (default: from Problem-1 to Problem-24).')
 parser.add_argument('-d', '--dimensions', type=str, default='5,20', metavar='',
-                    help='Dimensions used to experiments (default: Dimension-5 and Dimension-20).')
+                    help='Dimensions used in experiments (default: Dimension-5 and Dimension-20).')
 parser.add_argument('-i', '--instances', type=int, default=5, metavar='',
                     help='Number of instances used to experiments (default: 5 instances).')
 parser.add_argument('-r', '--runs', type=int, default=5, metavar='',
