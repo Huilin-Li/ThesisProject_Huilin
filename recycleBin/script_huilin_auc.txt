@@ -1,0 +1,24 @@
+for (f in list.files("~/Temp_Huilin/")){
+  dsl <- DataSetList(f)
+  for (fid in seq(24)) {
+    for (D in c(5,20)) {
+      x <- generate_data.AUC(subset(dsl, funcId == 1 && DIM == 5), targets = get_ECDF_targets(dsl, "bbob"), normalize = T, scale_log = T)
+
+
+      }
+  }
+}
+
+dsl_large <- DataSetList("~/Temp_Huilin/")
+bbob_targets <- get_ECDF_targets(dsl, "bbob")
+x <- generate_data.AUC(subset(dsl_large, funcId == 1 && DIM == 5), targets = bbob_targets, normalize = T, scale_log = T)
+temp_dt <- data.table()
+dt <- rbindlist(lapply(seq(24), function(fid) {
+  return(rbindlist(lapply(c(5,20), function(D) {
+    x <- generate_data.AUC(subset(dsl_large, funcId == fid && DIM == D), targets = bbob_targets, normalize = T, scale_log = T)
+    x$fid <- fid
+    x$DIM <- D
+    x
+  })))
+}))
+
