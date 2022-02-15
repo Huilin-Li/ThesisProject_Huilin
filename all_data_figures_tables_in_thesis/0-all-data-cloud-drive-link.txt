@@ -1,12 +1,11 @@
-data_to_prove_no_impact_in_sync_or_async_evaluation
-
-
-data_to_prove_yes_impact_in_sync_or_async_global_best_one
-
-
-fixed_data_to_prove_UNIOA_is_same_as_SEP
-
-
-unzip_data_files_not_used_in_iohanalyzer
-
 https://surfdrive.surf.nl/files/index.php/s/sffBTtaFT5Yynrx?path=%2F
+
+there are 4 folders:
+1.data_to_prove_no_impact_in_sync_or_async_evaluation
+
+2.data_to_prove_yes_impact_in_sync_or_async_global_best_one
+
+3.fixed_data_to_prove_UNIOA_is_same_as_SEP
+
+4.unzip_data_files_not_used_in_iohanalyzer
+

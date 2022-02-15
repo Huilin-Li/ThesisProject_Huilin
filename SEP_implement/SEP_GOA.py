@@ -3,18 +3,8 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 from sklearn.metrics import pairwise_distances
 
 
-
-# -------------------------------------------------------------------------------------------
-# The file is a translation of Grasshopper-Optimizer (faster version)\cite{1,2} from MatLab to Python.
-# This Python version code suits our specific experiment cases in IOHanalyzer\cite{3}.
-# The execution logic is same as the original implementation in \cite{2}.
-# -------------------------------------------------------------------------------------------
-# References:
-# [1]S. Saremi, S. Mirjalili, and A. Lewis, ‘Grasshopper Optimisation Algorithm: Theory and application’, Advances in Engineering Software, vol. 105, pp. 30–47, Mar. 2017, doi: 10.1016/j.advengsoft.2017.01.004.
-# [2]https://seyedalimirjalili.com/goa
-# [3]C. Doerr, H. Wang, F. Ye, S. van Rijn, and T. Bäck, ‘IOHprofiler: A Benchmarking and Profiling Tool for Iterative Optimization Heuristics’, arXiv:1810.05281 [cs], Oct. 2018, Accessed: Sep. 19, 2021. [Online]. Available: http://arxiv.org/abs/1810.05281
-# -------------------------------------------------------------------------------------------
-
+# original GOA framework
+# synchronous Evaluation + synchronous Global calculation
 
 class GOA_SEP(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
@@ -41,7 +31,7 @@ class GOA_SEP(NatureOpt):
         while not self.stop:
             c=cMax-l*((cMax-cMin)/self.budget) # Eq. (2.8) in the paper, self.budget =  Max_iter
             Dist = pairwise_distances(GrassHopperPositions, metric='euclidean')
-            temp = GrassHopperPositions
+            temp = GrassHopperPositions.copy()
             for i in range(self.M):
                 S_i = np.zeros(self.n)
                 for j in list(range(i)) + list(range(i+1, self.M)):

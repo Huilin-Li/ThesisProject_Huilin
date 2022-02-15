@@ -2,16 +2,9 @@ import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
 
 
-# -------------------------------------------------------------------------------------------
-# The file is a translation of Butterfly-Optimizer\cite{1,2} from MatLab to Python.
-# This Python version code suits our specific experiment cases in IOHanalyzer\cite{3}.
-# The execute logic is same as the original implementation in \cite{2}.
-# -------------------------------------------------------------------------------------------
-# References:
-# [1]S. Arora and S. Singh, ‘Butterfly optimization algorithm: a novel approach for global optimization’, Soft Comput, vol. 23, no. 3, pp. 715–734, Feb. 2019, doi: 10.1007/s00500-018-3102-4.
-# [2]https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/b4a529ac-c709-4752-8ae1-1d172b8968fc/67a434dc-8224-4f4e-a835-bc92c4630a73/previews/BOA.m/index.html
-# [3]C. Doerr, H. Wang, F. Ye, S. van Rijn, and T. Bäck, ‘IOHprofiler: A Benchmarking and Profiling Tool for Iterative Optimization Heuristics’, arXiv:1810.05281 [cs], Oct. 2018, Accessed: Sep. 19, 2021. [Online]. Available: http://arxiv.org/abs/1810.05281
-# -------------------------------------------------------------------------------------------
+# original BOA framework
+# asynchronous Evaluation + asynchronous Global calculation
+
 
 
 class BOA_SEP(NatureOpt):

@@ -2,6 +2,9 @@ import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
 
 
+# original BOA framework
+# but both Global calculation and Evaluation are synchronous
+
 
 
 class BOA_SEP_syncE_syncG(NatureOpt):

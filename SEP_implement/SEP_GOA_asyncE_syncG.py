@@ -2,6 +2,10 @@ import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
 from sklearn.metrics import pairwise_distances
 
+# original GOA framework
+# but Evaluation are asynchronous
+# global best one calculation method is still synchronous
+
 
 
 class GOA_SEP_asyncE_syncG(NatureOpt):
@@ -29,7 +33,7 @@ class GOA_SEP_asyncE_syncG(NatureOpt):
         while not self.stop:
             c=cMax-l*((cMax-cMin)/self.budget) # Eq. (2.8) in the paper, self.budget =  Max_iter
             Dist = pairwise_distances(GrassHopperPositions, metric='euclidean')
-            temp = GrassHopperPositions
+            temp = GrassHopperPositions.copy()
             for i in range(self.M):
                 S_i = np.zeros(self.n)
                 for j in list(range(i)) + list(range(i+1, self.M)):
@@ -51,15 +55,6 @@ class GOA_SEP_asyncE_syncG(NatureOpt):
                     TargetPosition=GrassHopperPositions[i]
                     TargetFitness=GrassHopperFitness[i]
 
-            # # evaluate new pop
-            # GrassHopperFitness = self.Evaluate_X(X=GrassHopperPositions)
-            # # no selection
-            #
-            # # update global best = named Target Position here
-            # for i in range(self.M):
-            #     if GrassHopperFitness[i]<TargetFitness:
-            #         TargetPosition=GrassHopperPositions[i]
-            #         TargetFitness=GrassHopperFitness[i]
             l = l + 1
             
         

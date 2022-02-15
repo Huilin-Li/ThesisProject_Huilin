@@ -1,6 +1,8 @@
 import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
 
+# original BA framework
+# but the Evaluation becomes asynchronous
 
 class CSA_SEP_asyncE(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):

@@ -5,7 +5,7 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 
 # original BA framework
 # but only fix the asynchronous Global calculation to the synchronous Global calculation
-# the Evaluation is still synchronous
+# the Evaluation is still asynchronous
 
 
 
@@ -50,8 +50,6 @@ class BA_SEP_fix(NatureOpt):
                     x= best + 0.1 * np.random.randn(self.n) * A
                 # Check if the new solution is within the simple bounds
                 x = np.clip(x, self.lb_x, self.ub_x)
-                #Sol_temp[i] = x
-
                 fitness_temp = self.fitness_function(x)
                 # selection
                 if ((fitness_temp <= Fitness[i]) and (np.random.rand() > A)):

@@ -12,7 +12,7 @@ parser.add_argument('-p','--problems', type=str, default= '1:24', metavar='',
 parser.add_argument('-d', '--dimensions', type=str, default='5,20', metavar='',
                     help='Dimensions used in experiments (default: Dimension-5 and Dimension-20).')
 parser.add_argument('-i', '--instances', type=int, default=5, metavar='',
-                    help='Number of instances used to experiments (default: 5 instances).')
+                    help='Number of instances used in experiments (default: 5 instances).')
 parser.add_argument('-r', '--runs', type=int, default=5, metavar='',
                     help='Number of experiments executed per problem per instance per dimension (default: 5 runs).')
 
