@@ -1,6 +1,6 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
 
-# This class implements Bat-Optimizer in the new structure.
+# This class implements Bat-Optimizer in the UNIOA framework.
 # E is async
 # G is sync
 

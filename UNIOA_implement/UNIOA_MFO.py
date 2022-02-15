@@ -1,8 +1,8 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
 
-# -------------------------------------------------------------------------------------------------
-# MothFlame-Optimizer in the new structure.
-# -------------------------------------------------------------------------------------------------
+# MothFlame-Optimizer in the UNIOA framework.
+# E is sync
+# G is sync
 
 class MFO_UNIOA(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):

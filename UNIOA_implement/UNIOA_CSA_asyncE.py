@@ -1,6 +1,6 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
 
-# This class implements CSA-Optimizer in the new structure.
+# This class implements CSA-Optimizer in the UNIOA framework.
 # E is async
 # G is sync
 class CSA_UNIOA_asyncE(NatureOpt):

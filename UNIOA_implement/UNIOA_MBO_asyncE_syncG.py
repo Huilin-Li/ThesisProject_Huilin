@@ -1,7 +1,7 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
-# -------------------------------------------------------------------------------------------------
-# This class implements MBO-Optimizer in the new structure.
-# -------------------------------------------------------------------------------------------------
+# This class implements MBO-Optimizer in the UNIOA framework.
+# E is async
+# G is sync
 
 class MBO_UNIOA_asyncE_syncG(NatureOpt):
     def __init__(self, func, hyperparams_set, budget_factor=1e4):

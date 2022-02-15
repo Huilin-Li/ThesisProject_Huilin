@@ -1,7 +1,7 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
 
 
-# This class implements BOA-Optimizer in the new structure.
+# This class implements BOA-Optimizer in the UNIOA framework.
 # E is async
 # G is sync
 class BOA_UNIOA_asyncE_syncG(NatureOpt):

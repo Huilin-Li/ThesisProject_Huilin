@@ -1,6 +1,6 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
 
-# This class implements GOA-Optimizer in the new structure.
+# This class implements GOA-Optimizer in the UNIOA framework.
 # E is async
 # G is sync
 

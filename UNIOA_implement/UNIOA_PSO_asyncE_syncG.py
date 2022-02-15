@@ -1,8 +1,8 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
-import numpy as np
-# -------------------------------------------------------------------------------------------------
-# This class implements PSO-Optimizer in the new structure.
-# -------------------------------------------------------------------------------------------------
+
+# This class implements PSO-Optimizer in the UNIOA framework.
+# E is async
+# G is sync
 
 class PSO_UNIOA_asyncE_syncG(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
