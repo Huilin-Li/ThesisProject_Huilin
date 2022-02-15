@@ -1,10 +1,9 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
 
 
-# -------------------------------------------------------------------------------------------------
 # This class implements BOA-Optimizer in the new structure.
-# -------------------------------------------------------------------------------------------------
-
+# E is async
+# G is sync
 class BOA_UNIOA_asyncE_syncG(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)

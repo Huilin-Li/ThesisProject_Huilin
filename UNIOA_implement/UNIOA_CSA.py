@@ -1,8 +1,9 @@
 from UNIOA_Framework.NatureOpt import NatureOpt
 
-# -------------------------------------------------------------------------------------------------
+
 # This class implements CSA-Optimizer in the new structure.
-# -------------------------------------------------------------------------------------------------
+# E is sync
+# G is sync
 
 class CSA_UNIOA(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
