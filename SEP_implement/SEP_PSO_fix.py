@@ -1,6 +1,9 @@
 import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
 
+# original PSO framework
+# but only fix the asynchronous Global calculation to the synchronous Global calculation
+# the Evaluation is still asynchronous
 
 
 class PSO_SEP_fix(NatureOpt):

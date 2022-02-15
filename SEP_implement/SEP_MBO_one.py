@@ -3,16 +3,10 @@ from numba import njit, prange, jit
 from UNIOA_Framework.NatureOpt import NatureOpt
 from UNIOA_Framework.LevyFlight import Levy
 
-# -------------------------------------------------------------------------------------------
-# The file is a translation of Monarch-Butterfly-Optimizer\cite{1,2} from MatLab to Python.
-# This Python version code suits our specific experiment cases in IOHanalyzer\cite{3}.
-# The execute logic is same as the original implementation in \cite{2}.
-# -------------------------------------------------------------------------------------------
-# References:
-# [1]G.-G. Wang, S. Deb, and Z. Cui, ‘Monarch butterfly optimization’, Neural Comput & Applic,#  vol. 31, no. 7, pp. 1995–2014, Jul. 2019, doi: 10.1007/s00521-015-1923-y.
-# [2]https://nl.mathworks.com/matlabcentral/fileexchange/101400-monarch-butterfly-optimization-mbo?s_tid=srchtitle
-# [3]C. Doerr, H. Wang, F. Ye, S. van Rijn, and T. Bäck, ‘IOHprofiler: A Benchmarking and Profiling Tool for Iterative Optimization Heuristics’, arXiv:1810.05281 [cs], Oct. 2018, Accessed: Sep. 19, 2021. [Online]. Available: http://arxiv.org/abs/1810.05281
-# -------------------------------------------------------------------------------------------
+# original MBO framework
+# synchronous Evaluation + synchronous Global calculation
+# BUT one evaluation in one round
+
 
 class MBO_SEP_ONE(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):

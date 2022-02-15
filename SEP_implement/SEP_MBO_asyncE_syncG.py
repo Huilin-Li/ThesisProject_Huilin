@@ -3,6 +3,11 @@ from numba import njit, prange, jit
 from UNIOA_Framework.NatureOpt import NatureOpt
 from UNIOA_Framework.LevyFlight import Levy
 
+# original GOA framework
+# but Evaluation are asynchronous
+# global best one calculation method is still synchronous
+
+
 class MBO_SEP_asyncE_syncG(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)

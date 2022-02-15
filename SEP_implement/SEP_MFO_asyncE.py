@@ -2,6 +2,8 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 import numpy as np
 import math
 
+# original MFO framework
+# but the Evaluation becomes asynchronous
 
 class MFO_SEP_asyncE(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):

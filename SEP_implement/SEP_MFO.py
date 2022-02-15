@@ -2,16 +2,8 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 import numpy as np
 import math
 
-# -------------------------------------------------------------------------------------------
-# The file is a translation of MothFlame-Optimizer\cite{1,2} from MatLab to Python.
-# This Python version code suits our specific experiment cases in IOHanalyzer\cite{3}.
-# The execution logic is same as the original implementation in \cite{2}.
-# -------------------------------------------------------------------------------------------
-# References:
-# [1]S. Mirjalili, ‘Moth-flame optimization algorithm: A novel nature-inspired heuristic paradigm’, Knowledge-Based Systems, vol. 89, pp. 228–249, Nov. 2015, doi: 10.1016/j.knosys.2015.07.006.
-# [2]https://uk.mathworks.com/matlabcentral/fileexchange/52270-moth-flame-optimization-mfo-algorithm-toolbox?s_tid=srchtitle
-# [3]C. Doerr, H. Wang, F. Ye, S. van Rijn, and T. Bäck, ‘IOHprofiler: A Benchmarking and Profiling Tool for Iterative Optimization Heuristics’, arXiv:1810.05281 [cs], Oct. 2018, Accessed: Sep. 19, 2021. [Online]. Available: http://arxiv.org/abs/1810.05281
-# -------------------------------------------------------------------------------------------
+# original MFO framework
+# synchronous Evaluation
 
 class MFO_SEP(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
