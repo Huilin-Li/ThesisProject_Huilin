@@ -21,7 +21,7 @@ args = parser.parse_args()
 if __name__ == "__main__":
     # gather information from terminal
     optimizer_name =args.name
-    output_name = args.outputname
+    output_name = args.OutputFileName
     p_str = args.problems
     d_str = args.dimensions
     i_int= args.instances
