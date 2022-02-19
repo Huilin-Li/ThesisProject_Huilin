@@ -32,6 +32,7 @@
 <a name="ep"></a>
 ## Experiments 
 There are four experiments.
+![plot](all_data_figures_tables_in_thesis/py_file_name_content_balabala.png)
 <a name="ep1"></a>
 ### experiment 1: 
 | file name | usage |
