@@ -11,7 +11,7 @@ three_folders <- c("data_to_prove_no_impact_in_sync_or_async_evaluation",
                  "data_to_prove_yes_impact_in_sync_or_async_global_best_one",
                  "fixed_data_to_prove_UNIOA_is_same_as_SEP")
 
-AUCs_names <- c("auc_28", "auc_10", "auc_14")
+AUCs_names <- c("auc_E", "auc_G", "auc_VS")
 for (i in seq(3)){
  name <- three_folders[i]
  auc_name <- AUCs_names[i]

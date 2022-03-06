@@ -34,12 +34,12 @@ class BA_SEP_fix(NatureOpt):
 
         # iteration counter
         t = 0
-        A=self.alpha*self.A
+
         # Start the iterations -- the Bat Algorithm (BA) -- main loop
         while not self.stop:
             #  Varying loundness (A) and pulse emission rate (r)
             r=self.r0*(1-math.exp(-self.gamma*t))
-
+            A = self.alpha * self.A
             # Loop over all bats/solutions
             for i in range(self.M):
                 Freq=self.Freq_min+(self.Freq_max-self.Freq_min)*np.random.rand()
@@ -63,5 +63,4 @@ class BA_SEP_fix(NatureOpt):
                     fmin=Fitness[i]
 
             t=t+1
-            A = self.alpha*A
 

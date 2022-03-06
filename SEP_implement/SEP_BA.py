@@ -32,20 +32,20 @@ class BA_SEP(NatureOpt):
 
         # iteration counter
         t = 0
-        A=self.alpha*self.A
         # Start the iterations -- the Bat Algorithm (BA) -- main loop
         while not self.stop:
             #  Varying loundness (A) and pulse emission rate (r)
-            r=self.r0*(1-math.exp(-self.gamma*t))
+            r = self.r0*(1-math.exp(-self.gamma*t))
+            A = self.alpha * self.A
 
             # Loop over all bats/solutions
             for i in range(self.M):
-                Freq=self.Freq_min+(self.Freq_max-self.Freq_min)*np.random.rand()
-                v[i]=v[i]+(Sol[i]-best)*Freq
-                x= Sol[i] + v[i]
+                Freq = self.Freq_min+(self.Freq_max-self.Freq_min)*np.random.rand()
+                v[i] = v[i]+(Sol[i]-best)*Freq
+                x = Sol[i] + v[i]
                 # Check a switching condition
                 if np.random.rand()<r:
-                    x= best + 0.1 * np.random.randn(self.n) * A
+                    x = best + 0.1 * np.random.randn(self.n) * A
                 # Check if the new solution is within the simple bounds
                 x = np.clip(x, self.lb_x, self.ub_x)
                 fitness_temp = self.fitness_function(x)
@@ -60,5 +60,4 @@ class BA_SEP(NatureOpt):
                     fmin=Fitness[i]
 
             t=t+1
-            A = self.alpha*A
 
