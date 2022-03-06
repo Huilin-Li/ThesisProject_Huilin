@@ -31,11 +31,11 @@ class BA_SEP_syncE_syncG(NatureOpt):
 
         # iteration counter
         t = 0
-        A=self.alpha*self.A
         # Start the iterations -- the Bat Algorithm (BA) -- main loop
         while not self.stop:
             #  Varying loundness (A) and pulse emission rate (r)
             r=self.r0*(1-math.exp(-self.gamma*t))
+            A = self.alpha * self.A
 
             # Loop over all bats/solutions
             Sol_temp = Sol.copy()
@@ -64,5 +64,4 @@ class BA_SEP_syncE_syncG(NatureOpt):
                     fmin=Fitness[i]
 
             t=t+1
-            A = self.alpha*A
 
