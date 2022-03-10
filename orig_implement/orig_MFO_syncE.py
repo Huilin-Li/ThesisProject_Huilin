@@ -3,17 +3,17 @@ import numpy as np
 import math
 
 # original MFO framework
-# but the Evaluation becomes asynchronous
+# but the Evaluation becomes synchronous
 
-class MFO_orig_asyncE(NatureOpt):
+class MFO_orig_syncE(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
         super().__init__(func, budget_factor)
-        self.M = hyperparams_set.get('popsize', 30)
+        self.N = hyperparams_set.get('popsize', 30)
         
     def __call__(self):
         # Initialize the positions of moths
-        Moth_pos = np.random.uniform(self.lb_x, self.ub_x, (self.M, self.n))
-        Moth_fitness = self.Evaluate_X(X=Moth_pos)
+        Moth_pos = np.random.uniform(self.lb_x, self.ub_x, (self.N, self.n))
+        # Moth_fitness = self.Evaluate_X(X=Moth_pos)
 
         Iteration = 0
     
@@ -21,7 +21,11 @@ class MFO_orig_asyncE(NatureOpt):
         while not self.stop:
     
             # Number of flames Eq. (3.14) in the paper
-            Flame_no = round(self.M - Iteration * ((self.M - 1) / self.budget))
+            Flame_no = round(self.N - Iteration * ((self.N - 1) / self.budget))
+
+            for i in range(self.N):
+                Moth_pos[i] = np.clip(Moth_pos[i], self.lb_x, self.ub_x)
+            Moth_fitness = self.Evaluate_X(X = Moth_pos)
 
 
             if Iteration == 0:
@@ -40,8 +44,8 @@ class MFO_orig_asyncE(NatureOpt):
                 I2 = np.argsort(double_fitness)
                 double_sorted_population = double_population[I2]
 
-                fitness_sorted = double_fitness_sorted[0:self.M]
-                sorted_population = double_sorted_population[0:self.M]
+                fitness_sorted = double_fitness_sorted[0:self.N]
+                sorted_population = double_sorted_population[0:self.N]
                 # Update the flames
                 best_flames = sorted_population.copy()
                 best_flame_fitness = fitness_sorted.copy()
@@ -53,7 +57,7 @@ class MFO_orig_asyncE(NatureOpt):
             a = -1 + Iteration * ((-1) / self.budget)
     
             # Loop counter
-            for i in range(0, self.M):
+            for i in range(0, self.N):
                 b = 1
                 t = (a - 1) * np.random.rand() + 1
                 for j in range(0, self.n):
@@ -63,8 +67,8 @@ class MFO_orig_asyncE(NatureOpt):
                     else:
                         Moth_pos[i, j] = distance_to_flame * math.exp(b * t) * math.cos(t * 2 * math.pi) + sorted_population[Flame_no, j]
                 # check boundary
-                Moth_pos[i] = np.clip(Moth_pos[i], self.lb_x, self.ub_x)
-                Moth_fitness[i] = self.fitness_function(Moth_pos[i])
+                # Moth_pos[i] = np.clip(Moth_pos[i], self.lb_x, self.ub_x)
+                # Moth_fitness[i] = self.fitness_function(Moth_pos[i])
 
             #Moth_fitness = self.Evaluate_X(X=Moth_pos)
             Iteration = Iteration + 1

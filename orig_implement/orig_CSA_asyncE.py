@@ -14,7 +14,7 @@ class CSA_SEP_asyncE(NatureOpt):
     def __call__(self):
         X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
         fitness = self.Evaluate_X(X = X)
-        M=X.copy() # = M is the personal best
+        M=X.copy() # = N is the personal best
         fit=fitness.copy()
 
         # update xnew , update the assistant

@@ -313,10 +313,10 @@ class Opt_X:
     # @staticmethod
     # def csa(old_X, X_p, w1, w2, lb_x, ub_x):
     #     new_X = old_X
-    #     M, n = old_X.shape[0], old_X.shape[1]
-    #     for i in range(M):
+    #     N, n = old_X.shape[0], old_X.shape[1]
+    #     for i in range(N):
     #         if np.random.rand() > w1:
-    #             new = old_X[i] + np.random.rand() * w2 * (X_p[np.random.randint(M)] - old_X[i])
+    #             new = old_X[i] + np.random.rand() * w2 * (X_p[np.random.randint(N)] - old_X[i])
     #             if np.all(new >=lb_x) & np.all(new <= ub_x):
     #                 new_X[i] = new
     #         else:
@@ -326,12 +326,12 @@ class Opt_X:
     # @staticmethod
     # @jit(parallel=True)
     # def goa(old_X, old_x_g, z, lb_x, ub_x, w1, w2):
-    #     M, n = old_X.shape[0], old_X.shape[1]
+    #     N, n = old_X.shape[0], old_X.shape[1]
     #     new_X =old_X.copy()
     #     Dist = pairwise_distances(old_X, metric='euclidean')
-    #     for i in prange(M):
+    #     for i in prange(N):
     #         Delta_X = np.zeros(n)
-    #         for j in range(M):
+    #         for j in range(N):
     #             if i != j:
     #                 # js are neighbors
     #                 D = Dist[i, j]
@@ -346,11 +346,11 @@ class Opt_X:
     # @staticmethod
     # @jit(parallel=True)
     # def mbo(old_X, old_X_Fit, x_g, z, w1, w2, w3, budget):
-    #     M, n = old_X.shape[0], old_X.shape[1]
+    #     N, n = old_X.shape[0], old_X.shape[1]
     #     I_s = np.argsort(old_X_Fit)
     #     sorted_X = old_X[I_s]
-    #     n_strongs = int(np.ceil(w1 * M))
-    #     n_weaks = M - n_strongs
+    #     n_strongs = int(np.ceil(w1 * N))
+    #     n_weaks = N - n_strongs
     #     strong_pop = sorted_X[0:n_strongs]
     #     weak_pop = sorted_X[n_strongs:]
     #     # strong
@@ -383,14 +383,14 @@ class Opt_X:
 
     # @staticmethod
     # def boa(old_X, old_X_Fit, x_g, z, w1, w2,lb_x, ub_x):
-    #     M = len(old_X)
+    #     N = len(old_X)
     #     new_X = old_X.copy()
-    #     for i in range(M):
+    #     for i in range(N):
     #         if np.random.rand()>w2:
     #             temp = np.random.rand() ** 2 * x_g - old_X[i]
     #             x = old_X[i] + temp * z * old_X_Fit[i] ** w1
     #         else:
-    #             jk = np.random.choice(M, 2, replace=False) # two indices of two neighbors
+    #             jk = np.random.choice(N, 2, replace=False) # two indices of two neighbors
     #             temp = np.random.rand()**2*old_X[jk[0]]-old_X[jk[1]]
     #             x = old_X[i] + temp * z * old_X_Fit[i] ** w1
     #         new_X[i] = np.clip(x, lb_x, ub_x)
