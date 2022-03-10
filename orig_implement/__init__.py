@@ -1,7 +1,7 @@
 # BA
 from .orig_BA_syncE_syncG import BA_SEP_syncE_syncG #ss
 from .orig_BA_fix import BA_SEP_fix #as
-from .orig_BA import BA_SEP #aa
+from .orig_BA import BA_orig #aa
 
 # GOA
 from .orig_GOA import GOA_SEP #ss

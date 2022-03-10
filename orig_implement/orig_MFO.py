@@ -5,7 +5,7 @@ import math
 # original MFO framework
 # synchronous Evaluation
 
-class MFO_SEP(NatureOpt):
+class MFO_orig(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 30)
