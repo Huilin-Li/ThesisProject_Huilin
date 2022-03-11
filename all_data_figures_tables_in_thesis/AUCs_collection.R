@@ -9,13 +9,13 @@ library(plyr)
 
 three_folders <- c("data_to_prove_no_impact_in_sync_or_async_evaluation",
                  "data_to_prove_yes_impact_in_sync_or_async_global_best_one",
-                 "fixed_data_to_prove_UNIOA_is_same_as_SEP")
+                 "fixed_data_to_prove_UNIOA_is_same_as_orig")
 
 AUCs_names <- c("auc_E", "auc_G", "auc_VS")
 for (i in seq(3)){
  name <- three_folders[i]
  auc_name <- AUCs_names[i]
- path <- paste("D:/Temp_Huilin/unzips/", name, "/", sep="")
+ path <- paste("D:/unzips/", name, "/", sep="")
  AUCs <- read.csv(text="Alg, funcID, Dim, Budget, AUC")
  for (f in list.files(path)){
    dsl <- DataSetList(paste(path, f, sep=""))
@@ -29,7 +29,7 @@ for (i in seq(3)){
      }
    }
  }
- outPath <- paste("D:/Temp_Huilin/", auc_name, ".xlsx", sep="")
+ outPath <- paste("D:/", auc_name, ".xlsx", sep="")
  write_xlsx(AUCs, outPath)
 }
 

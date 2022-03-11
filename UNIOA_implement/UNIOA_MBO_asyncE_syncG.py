@@ -25,14 +25,18 @@ class MBO_UNIOA_asyncE_syncG(NatureOpt):
             # OOptimize temp_X(t+1) and Evaluate
             temp_X, temp_X_Fit = self.Opt_X.mbo_but_asyncE(func=self.fitness_function, old_X=X, old_X_Fit=X_Fit, x_g=x_g, z=z, w1=self.w1, w2=self.w2, w3=self.w3, budget=self.budget)
             # Selection
-            new_X, new_X_Fit = self.Selection.elitism_type(temp_X=temp_X, temp_X_Fit=temp_X_Fit, old_X=X, old_X_Fit=X_Fit,
-                                                elitism=self.w5)
+            new_X, new_X_Fit = self.Selection.elitism_type(temp_X=temp_X, temp_X_Fit=temp_X_Fit, old_X=X, old_X_Fit=X_Fit, elitism=self.w5)
             # ----------------------------
-            t = t + 1
-            new_z = self.InitOpt_Delta_z.mbo(t=t, w4=self.w4)
-            x_g, x_g_fit = self.Opt_Delta_X.Global_best(new_X=new_X, new_X_Fit=new_X_Fit, old_x_g=x_g, old_x_g_fit=x_g_fit)
-            ########################################
-            X = new_X
-            X_Fit = new_X_Fit
+            new_z = self.InitOpt_Delta_z.mbo(t=t+1, w4=self.w4)
+            new_x_g, new_x_g_fit = self.Opt_Delta_X.Global_best(new_X=new_X, new_X_Fit=new_X_Fit, old_x_g=x_g, old_x_g_fit=x_g_fit)
+            # ----------------------------
+            X = new_X.copy()
+            X_Fit = new_X_Fit.copy()
+            x_g, x_g_fit = new_x_g, new_x_g_fit
             z = new_z
+            ########################################
+            t = t + 1
+
+
+
 
