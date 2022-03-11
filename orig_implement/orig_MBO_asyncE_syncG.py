@@ -8,7 +8,7 @@ from UNIOA_Framework.LevyFlight import Levy
 # global best one calculation method is still synchronous
 
 
-class MBO_SEP_asyncE_syncG(NatureOpt):
+class MBO_orig_asyncE_syncG(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 50)

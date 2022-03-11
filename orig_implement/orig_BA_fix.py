@@ -9,7 +9,7 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 
 
 
-class BA_SEP_fix(NatureOpt):
+class BA_orig_fix(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
         super().__init__(func,budget_factor)
         self.M = hyperparams_set.get('popsize', 20) #

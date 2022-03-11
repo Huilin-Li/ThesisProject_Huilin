@@ -6,7 +6,7 @@ from UNIOA_Framework.LevyFlight import Levy
 # original MBO framework
 # but both Global calculation and Evaluation are asynchronous
 
-class MBO_SEP_asyncE_asyncG(NatureOpt):
+class MBO_orig_asyncE_asyncG(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 50)

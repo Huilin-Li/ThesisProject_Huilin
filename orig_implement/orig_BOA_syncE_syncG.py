@@ -7,7 +7,7 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 
 
 
-class BOA_SEP_syncE_syncG(NatureOpt):
+class BOA_orig_syncE_syncG(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 50)

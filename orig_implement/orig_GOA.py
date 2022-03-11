@@ -6,7 +6,7 @@ from sklearn.metrics import pairwise_distances
 # original GOA framework
 # synchronous Evaluation + synchronous Global calculation
 
-class GOA_SEP(NatureOpt):
+class GOA_orig(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 100)

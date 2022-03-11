@@ -5,7 +5,7 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 # asynchronous Evaluation
 
 
-class CSA_SEP(NatureOpt):
+class CSA_orig(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize',20)

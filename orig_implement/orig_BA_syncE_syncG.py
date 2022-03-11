@@ -6,7 +6,7 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 # original BA framework
 # but both Global calculation and Evaluation are synchronous
 
-class BA_SEP_syncE_syncG(NatureOpt):
+class BA_orig_syncE_syncG(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
         super().__init__(func,budget_factor)
         self.M = hyperparams_set.get('popsize', 20) #

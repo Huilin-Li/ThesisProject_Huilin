@@ -6,7 +6,7 @@ from UNIOA_Framework.LevyFlight import Levy
 # original MBO framework
 # synchronous Evaluation + synchronous Global calculation
 
-class MBO_SEP(NatureOpt):
+class MBO_orig(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor=1e4):
         super().__init__(func, budget_factor)
         self.M = hyperparams_set.get('popsize', 50)
