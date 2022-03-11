@@ -20,18 +20,21 @@ class MFO_UNIOA_asyncE(NatureOpt):
 
         # optimize process
         while not self.stop:
-            # OOptimize temp_X(t+1) and Evaluation
+            # Optimize temp_X(t+1) and Evaluation
             temp_X, temp_X_Fit = self.Opt_X.mfo_but_asyncE(func=self.fitness_function, old_X=X, old_X_Fit=X_Fit, sort_X = sort_X, z1=z1, z2=z2, w=self.w, lb_x=self.lb_x, ub_x=self.ub_x )
             # Selection
             new_X, new_X_Fit = self.Selection.same_type(temp_X=temp_X, temp_X_Fit=temp_X_Fit)
             # ----------------------------
-            t = t + 1
             new_sort_X, new_sort_X_Fit = self.Opt_Delta_X.Sort_X(new_X=new_X, new_X_Fit=new_X_Fit, old_X=X, old_X_Fit=X_Fit)
-            new_z1 = self.InitOpt_Delta_z.mfo1(t=t, budget=self.budget)
-            new_z2 = self.InitOpt_Delta_z.mfo2(t=t, M=self.M, budget=self.budget)
-            ##################################
-            X = new_X
-            X_Fit= new_X_Fit
-            sort_X = new_sort_X
+            new_z1 = self.InitOpt_Delta_z.mfo1(t=t+1, budget=self.budget)
+            new_z2 = self.InitOpt_Delta_z.mfo2(t=t+1, M=self.M, budget=self.budget)
+            # ----------------------------
+            X = new_X.copy()
+            X_Fit = new_X_Fit.copy()
+            sort_X = new_sort_X.copy()
             z1 = new_z1
             z2 = new_z2
+            ##################################
+            t = t + 1
+
+

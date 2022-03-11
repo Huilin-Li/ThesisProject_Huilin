@@ -26,7 +26,7 @@ class MFO_orig(NatureOpt):
             Moth_fitness = np.zeros(self.N)
             for i in range(self.N):
                 Moth_pos[i] = np.clip(Moth_pos[i], self.lb_x, self.ub_x)
-                Moth_fitness = self.fitness_function(Moth_pos[i])
+                Moth_fitness[i] = self.fitness_function(Moth_pos[i])
 
             if Iteration == 0:
                 # Sort the first population of moths

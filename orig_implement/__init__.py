@@ -12,8 +12,8 @@ from .orig_CSA import CSA_SEP #s
 from .orig_CSA_asyncE import CSA_SEP_asyncE #a
 
 # MFO
-from .orig_MFO import MFO_SEP # s
-from .orig_MFO_syncE import MFO_SEP_asyncE # a
+from .orig_MFO import MFO_orig # s
+from .orig_MFO_syncE import MFO_orig_syncE # a
 
 
 # MBO
