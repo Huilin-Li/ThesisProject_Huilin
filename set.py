@@ -36,7 +36,7 @@ def optimizer_running(problems, instances, dimensions, num_runs, paras_set, opti
 
     print('costs', round((time.time() - st) / 60, 2), 'minutes')
     with open("DataFiles/runningtime_" + Which_alg + ".txt", "a+") as text_file:
-        date = datetime.now().strftime("%m/%d/%Y, %H:%N:%S")
+        date = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
         runningtime = round((time.time() - st) / 60, 2)
         print("{} | {}: {} minutes.".format(date, output_name, runningtime), file=text_file)
 
