@@ -1,16 +1,6 @@
 import subprocess
 ##################
 if __name__ == '__main__':
-    # <editor-folder desc="1. BA">
-    subprocess.call(['screen -dmS BA1 python ./run.py -n BA_UNIOA               -o UNIOA_BA_syncE_syncG'], shell=True)
-    subprocess.call(['screen -dmS BA2 python ./run.py -n BA_UNIOA_asyncE_syncG  -o UNIOA_BA_asyncE_syncG'], shell=True)
-    subprocess.call(['screen -dmS BA3 python ./run.py -n BA_orig                -o orig_BA_asyncE_asyncG'], shell=True)
-    subprocess.call(['screen -dmS BA4 python ./run.py -n BA_orig_syncE_syncG    -o orig_BA_syncE_syncG'], shell=True)
-    subprocess.call(['screen -dmS BA5 python ./run.py -n BA_orig_fix            -o orig_BA_asyncE_syncG'], shell=True)
-    #
-    subprocess.call(['screen -dmS BA01 python ./run.py -n BA_orig_fix           -o orig_BA_fix'], shell=True)
-    subprocess.call(['screen -dmS BA02 python ./run.py -n BA_UNIOA              -o UNIOA_BA'], shell=True)
-    # </editor-folder>
 
     # <editor-folder desc="2. GOA">
     subprocess.call(['screen -dmS GOA11 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 1:2'], shell=True)
@@ -105,44 +95,3 @@ if __name__ == '__main__':
     subprocess.call(['screen -dmS GOA0212 python ./run.py -n GOA_UNIOA -o UNIOA_GOA -p 23:24'], shell=True)
     # </editor-folder>
 
-    # <editor-folder desc="3. CSA">
-    subprocess.call(['screen -dmS CSA1 python ./run.py -n CSA_UNIOA            -o UNIOA_CSA_syncE'], shell=True)
-    subprocess.call(['screen -dmS CSA2 python ./run.py -n CSA_UNIOA_asyncE     -o UNIOA_CSA_asyncE'],shell=True)
-    subprocess.call(['screen -dmS CSA3 python ./run.py -n CSA_orig              -o orig_CSA_syncE'],shell=True)
-    subprocess.call(['screen -dmS CSA4 python ./run.py -n CSA_orig_asyncE       -o orig_CSA_asyncE'],shell=True)
-    #
-    subprocess.call(['screen -dmS CSA01 python ./run.py -n CSA_orig             -o orig_CSA'],shell=True)
-    subprocess.call(['screen -dmS CSA02 python ./run.py -n CSA_UNIOA           -o UNIOA_CSA'],shell=True)
-    # </editor-folder>
-
-    # <editor-folder desc="4. MFO">
-    subprocess.call(['screen -dmS MFO1 python ./run.py -n MFO_UNIOA            -o UNIOA_MFO_syncE'],shell=True)
-    subprocess.call(['screen -dmS MFO2 python ./run.py -n MFO_UNIOA_asyncE     -o UNIOA_MFO_asyncE'],shell=True)
-    subprocess.call(['screen -dmS MFO3 python ./run.py -n MFO_orig              -o orig_MFO_syncE'],shell=True)
-    subprocess.call(['screen -dmS MFO4 python ./run.py -n MFO_orig_asyncE       -o orig_MFO_asyncE'],shell=True)
-    #
-    subprocess.call(['screen -dmS MFO01 python ./run.py -n MFO_orig             -o orig_MFO'],shell=True)
-    subprocess.call(['screen -dmS MFO02 python ./run.py -n MFO_UNIOA           -o UNIOA_MFO'],shell=True)
-    # </editor-folder>
-
-    # <editor-folder desc="6. BOA">
-    subprocess.call(['screen -dmS BOA1 python ./run.py -n BOA_UNIOA              -o UNIOA_BOA_syncE_syncG'],shell=True)
-    subprocess.call(['screen -dmS BOA2 python ./run.py -n BOA_UNIOA_asyncE_syncG -o UNIOA_BOA_asyncE_syncG'],shell=True)
-    subprocess.call(['screen -dmS BOA3 python ./run.py -n BOA_orig                -o orig_BOA_asyncE_asyncG'],shell=True)
-    subprocess.call(['screen -dmS BOA4 python ./run.py -n BOA_orig_syncE_syncG    -o orig_BOA_syncE_syncG'],shell=True)
-    subprocess.call(['screen -dmS BOA5 python ./run.py -n BOA_orig_fix            -o orig_BOA_asyncE_syncG'],shell=True)
-    #
-    subprocess.call(['screen -dmS BOA01 python ./run.py -n BOA_orig_fix           -o orig_BOA_fix'],shell=True)
-    subprocess.call(['screen -dmS BOA02 python ./run.py -n BOA_UNIOA             -o UNIOA_BOA'],shell=True)
-    # </editor-folder>
-
-    # <editor-folder desc="7. PSO">
-    subprocess.call(['screen -dmS PSO1 python ./run.py -n PSO_UNIOA              -o UNIOA_PSO_syncE_syncG'],shell=True)
-    subprocess.call(['screen -dmS PSO2 python ./run.py -n PSO_UNIOA_asyncE_syncG -o UNIOA_PSO_asyncE_syncG'],shell=True)
-    subprocess.call(['screen -dmS PSO3 python ./run.py -n PSO_orig                -o orig_PSO_asyncE_asyncG'],shell=True)
-    subprocess.call(['screen -dmS PSO4 python ./run.py -n PSO_orig_syncE_syncG    -o orig_PSO_syncE_syncG'],shell=True)
-    subprocess.call(['screen -dmS PSO5 python ./run.py -n PSO_orig_fix            -o orig_PSO_asyncE_syncG'],shell=True)
-    #
-    subprocess.call(['screen -dmS PSO01 python ./run.py -n PSO_orig_fix           -o orig_PSO_fix'],shell=True)
-    subprocess.call(['screen -dmS PSO02 python ./run.py -n PSO_UNIOA             -o UNIOA_PSO'],shell=True)
-    # </editor-folder>
