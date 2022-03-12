@@ -1,5 +1,6 @@
 from UNIOA_Framework import *
 import numpy as np
+import copy
 
 
 class NatureOpt:

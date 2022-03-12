@@ -1,4 +1,5 @@
 import math
+import copy
 import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
 
@@ -10,7 +11,7 @@ from UNIOA_Framework.NatureOpt import NatureOpt
 class BA_orig(NatureOpt):
     def __init__(self, func ,hyperparams_set, budget_factor = 1e4):
         super().__init__(func,budget_factor)
-        self.M = hyperparams_set.get('popsize', 20) #
+        self.M = hyperparams_set.get('popsize', 20) # original paper uses n, but n is dim in IOH, there change n to M, and d to n
         self.A = hyperparams_set.get('loudness', 1) # initial loudness A
         self.r0 = hyperparams_set.get('pulse_rate', 1) # initial pulse rate r0
         self.alpha = hyperparams_set.get('alpha', 0.97) # to decrease A
@@ -19,16 +20,17 @@ class BA_orig(NatureOpt):
         self.Freq_max = hyperparams_set.get('frequency_max', 2)
         
     def __call__(self):
-        v = np.zeros((self.M, self.n))  # Velocities
+
 
         # Initialize the population/solutions
         Sol = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
         Fitness = self.Evaluate_X(X = Sol)
-
+        # Velocities
+        v = np.zeros((self.M, self.n))
         # Find the best solution of the initial population
         I = np.argmin(Fitness)
-        best = Sol[I]
-        fmin = min(Fitness)
+        best = Sol[I].copy()
+        fmin = copy.copy(Fitness[I])
 
         # iteration counter
         t = 0
@@ -56,8 +58,8 @@ class BA_orig(NatureOpt):
 
                 # Update the current best solution = global best one
                 if Fitness[i]<=fmin:
-                    best=Sol[i]
-                    fmin=Fitness[i]
+                    best = Sol[i].copy()
+                    fmin = copy.copy(Fitness[i])
 
             t=t+1
 

@@ -7,7 +7,7 @@
   - [ customized optimizer. ](#exm1)
   - [ benchmark and comparison. ](#exm2)
   - [ results of example experiment. ](#exm3)
-- [ Versions. ](#ver)
+- [ Coding errors. ](#cod)
 
 <a name="ov"></a>
 ## Overview
@@ -76,3 +76,6 @@ Python 3.7.7
 Numpy 1.18.2
 IOHexperimenter
 ```
+<a name="cod"></a>
+## Coding errors
+1. avoid side effects of ``=``, must use ``copy.copy()`` somewhere. For example, when you need to create a new variable that is equal to the old variable, but not throw away the old one. Specifically, if you will use the right-variable in the following steps, please use copy.copy(single_number)/[list/array].copy()
