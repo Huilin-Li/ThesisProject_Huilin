@@ -1,4 +1,5 @@
 import numpy as np
+import copy
 from UNIOA_Framework.NatureOpt import NatureOpt
 
 # original CSA framework
@@ -37,10 +38,10 @@ class CSA_orig(NatureOpt):
             # update personal best Mem
             for i in range(self.M):
                 if fitness[i] < fit[i]:
-                    M[i] = Xnew[i]
-                    fit[i] = fitness[i]
+                    M[i] = Xnew[i].copy()
+                    fit[i] = copy.copy(fitness[i])
 
-            X = Xnew
+            X = Xnew.copy()
 
 
 

@@ -1,3 +1,4 @@
+import copy
 import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
 
@@ -33,13 +34,13 @@ class CSA_orig_asyncE(NatureOpt):
                 fitness[i] = self.fitness_function(Xnew[i])
 
             # NO selection
-            # update personal best Mem
+            # update personal best = Mem
             for i in range(self.M):
                 if fitness[i] < fit[i]:
-                    M[i] = Xnew[i]
-                    fit[i] = fitness[i]
+                    M[i] = Xnew[i].copy()
+                    fit[i] = copy.copy(fitness[i])
 
-            X = Xnew
+            X = Xnew.copy()
 
 
 
