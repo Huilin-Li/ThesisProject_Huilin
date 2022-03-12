@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import copy
 from UNIOA_Framework.NatureOpt import NatureOpt
 
 
@@ -26,8 +27,8 @@ class BA_orig_syncE_syncG(NatureOpt):
 
         # Find the best solution of the initial population
         I = np.argmin(Fitness)
-        best = Sol[I]
-        fmin = min(Fitness)
+        best = Sol[I].copy()
+        fmin = copy.copy(Fitness[I])
 
         # iteration counter
         t = 0
@@ -60,8 +61,8 @@ class BA_orig_syncE_syncG(NatureOpt):
             # Update the current best solution = global best one
             for i in range(self.M):
                 if Fitness[i]<=fmin:
-                    best=Sol[i]
-                    fmin=Fitness[i]
+                    best=Sol[i].copy()
+                    fmin=copy.copy(Fitness[i])
 
             t=t+1
 
