@@ -5,9 +5,9 @@ from UNIOA_implement import *
 from orig_implement import *
 from datetime import datetime
 
-# -------------------------------------------------------------------------------------------
-# The file is used to configure command-line
-# -------------------------------------------------------------------------------------------
+#
+# extract information from terminal
+#
 
 
 def optimizer_running(problems, instances, dimensions, num_runs, paras_set, optimizer_name, output_name):
