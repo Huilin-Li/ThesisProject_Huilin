@@ -3,18 +3,18 @@ import subprocess
 if __name__ == '__main__':
 
     # <editor-folder desc="2. GOA">
-    subprocess.call(['screen -dmS GOA11 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 1:2'], shell=True)
-    subprocess.call(['screen -dmS GOA12 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 3:4'], shell=True)
-    subprocess.call(['screen -dmS GOA13 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 5:6'], shell=True)
-    subprocess.call(['screen -dmS GOA14 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 7:8'], shell=True)
-    subprocess.call(['screen -dmS GOA15 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 9:10'], shell=True)
-    subprocess.call(['screen -dmS GOA16 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 11:12'], shell=True)
+    subprocess.call(['screen -dmS GOA11 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 1:3'], shell=True)
+    subprocess.call(['screen -dmS GOA12 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 4:6'], shell=True)
+    subprocess.call(['screen -dmS GOA13 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 7:9'], shell=True)
+    subprocess.call(['screen -dmS GOA14 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 10:12'], shell=True)
+    subprocess.call(['screen -dmS GOA15 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 13:15'], shell=True)
+    subprocess.call(['screen -dmS GOA16 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 16:18'], shell=True)
     subprocess.call(['screen -dmS GOA17 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 13:14'], shell=True)
     subprocess.call(['screen -dmS GOA18 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 15:16'], shell=True)
-    subprocess.call(['screen -dmS GOA19 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 17:18'], shell=True)
-    subprocess.call(['screen -dmS GOA110 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 19:20'], shell=True)
-    subprocess.call(['screen -dmS GOA111 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 21:22'], shell=True)
-    subprocess.call(['screen -dmS GOA112 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 23:24'], shell=True)
+    # subprocess.call(['screen -dmS GOA19 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 17:18'], shell=True)
+    # subprocess.call(['screen -dmS GOA110 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 19:20'], shell=True)
+    # subprocess.call(['screen -dmS GOA111 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 21:22'], shell=True)
+    # subprocess.call(['screen -dmS GOA112 python ./run.py -n GOA_UNIOA -o UNIOA_GOA_syncE_syncG -p 23:24'], shell=True)
 
     subprocess.call(['screen -dmS GOA21 python ./run.py -n GOA_UNIOA_asyncE_syncG -o UNIOA_GOA_asyncE_syncG -p 1:2'], shell=True)
     subprocess.call(['screen -dmS GOA22 python ./run.py -n GOA_UNIOA_asyncE_syncG -o UNIOA_GOA_asyncE_syncG -p 3:4'], shell=True)

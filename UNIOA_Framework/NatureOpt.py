@@ -5,18 +5,17 @@ import copy
 
 class NatureOpt:
     def __init__(self, func, budget_factor = 1e4):
-        # inherits objective problem, problem dimension, maximum iteration, problem boundary
+        # objective problem, problem dimension, maximum iteration, problem boundary
         self.fitness_function = func
         self.n = func.meta_data.n_variables
         self.budget = budget_factor * self.n
         self.lb_x = self.fitness_function.constraint.lb[0]
         self.ub_x = self.fitness_function.constraint.ub[1]
-        # inherits components
         # compulsory components
         self.Init_X = Init_X
         self.Opt_X = Opt_X
         self.Selection = Selection
-        # elective components
+        # selective components
         self.Init_Delta_X = Init_Delta_X
         self.Init_Delta_Y = Init_Delta_Y
         self.InitOpt_Delta_z = InitOpt_Delta_z
