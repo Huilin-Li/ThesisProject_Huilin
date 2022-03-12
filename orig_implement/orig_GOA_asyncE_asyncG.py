@@ -1,4 +1,5 @@
 import numpy as np
+import copy
 from UNIOA_Framework.NatureOpt import NatureOpt
 from sklearn.metrics import pairwise_distances
 
@@ -27,8 +28,8 @@ class GOA_orig_asyncE_asyncG(NatureOpt):
 
         # Find the best grasshopper (target) in the first population
         ind = np.argmin(GrassHopperFitness)
-        TargetPosition = GrassHopperPositions[ind]
-        TargetFitness = GrassHopperFitness[ind]
+        TargetPosition = GrassHopperPositions[ind].copy()
+        TargetFitness = copy.copy(GrassHopperFitness[ind])
         
         # Main loop
         while not self.stop:
@@ -50,9 +51,9 @@ class GOA_orig_asyncE_asyncG(NatureOpt):
 
                 grassHopperFitness = self.fitness_function(GrassHopperPositions[i])
 
-                if grassHopperFitness<TargetFitness:
-                    TargetPosition=GrassHopperPositions[i]
-                    TargetFitness=grassHopperFitness
+                if grassHopperFitness < TargetFitness:
+                    TargetPosition = GrassHopperPositions[i].copy()
+                    TargetFitness = copy.copy(grassHopperFitness)
 
             l = l + 1
             
