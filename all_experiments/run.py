@@ -1,5 +1,5 @@
 import argparse
-from set import *
+from settings import *
 
 #
 # main python script for executing algorithms

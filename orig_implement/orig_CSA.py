@@ -16,18 +16,18 @@ class CSA_orig(NatureOpt):
     def __call__(self):
         X = self.Init_X.Init_X(M=self.M, n=self.n, lb_x=self.lb_x, ub_x=self.ub_x)
         fitness = self.Evaluate_X(X = X)
-        M=X.copy() # = N is the personal best
+        Mem=X.copy() # = Memory is the personal best
         fit=fitness.copy()
 
-        # update xnew , update the assistant
+        # generate xnew
         Xnew = X.copy()
         while not self.stop:
             for i in range(self.M):
                 if np.random.rand() > self.AP:
-                    new = X[i]+self.fl*np.random.rand()*(M[np.random.randint(self.M)]-X[i])
+                    new = X[i]+self.fl*np.random.rand()*(Mem[np.random.randint(self.M)] - X[i])
                 else:
-                    new= np.random.uniform(self.lb_x, self.ub_x, self.n)
-                # check position
+                    new = np.random.uniform(self.lb_x, self.ub_x, self.n)
+                # check position ==> another kind of selection ==> mixing selection and fixing outliers
                 if np.all(new >=self.lb_x) & np.all(new <= self.ub_x):
                     Xnew[i] = new
 
@@ -38,7 +38,7 @@ class CSA_orig(NatureOpt):
             # update personal best Mem
             for i in range(self.M):
                 if fitness[i] < fit[i]:
-                    M[i] = Xnew[i].copy()
+                    Mem[i] = Xnew[i].copy()
                     fit[i] = copy.copy(fitness[i])
 
             X = Xnew.copy()

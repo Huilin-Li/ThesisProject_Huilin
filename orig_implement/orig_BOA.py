@@ -1,6 +1,6 @@
 import numpy as np
 from UNIOA_Framework.NatureOpt import NatureOpt
-
+import copy
 
 # original BOA framework
 # asynchronous Evaluation + asynchronous Global calculation
@@ -25,8 +25,8 @@ class BOA_orig(NatureOpt):
         fitness = self.Evaluate_X(X = Sol)
         # find the global best
         ind = np.argmin(fitness)
-        best_pos= Sol[ind]
-        fmin = fitness[ind]
+        best_pos= Sol[ind].copy()
+        fmin = copy.copy(fitness[ind])
         # S=Sol.copy()
         sensory_modality = self.initial_sensory_modality
         while not self.stop:
@@ -49,13 +49,13 @@ class BOA_orig(NatureOpt):
                     
                 # If fitness improves (better solutions found), update then = selection
                 if Fnew <= fitness[i]:
-                    Sol[i] = x
-                    fitness[i] = Fnew
+                    Sol[i] = x.copy()
+                    fitness[i] = copy.copy(Fnew)
 
                 # Update the current global best_pos
                 if fitness[i]<=fmin:
-                    best_pos=Sol[i]
-                    fmin=fitness[i]
+                    best_pos=Sol[i].copy()
+                    fmin=copy.copy(fitness[i])
 
         
             #Update sensory_modality
