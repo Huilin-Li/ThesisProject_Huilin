@@ -1,4 +1,5 @@
 import numpy as np
+import copy
 from UNIOA_Framework.NatureOpt import NatureOpt
 
 
@@ -25,12 +26,12 @@ class BOA_orig_syncE_syncG(NatureOpt):
         fitness = self.Evaluate_X(X = Sol)
         # find the global best
         ind = np.argmin(fitness)
-        best_pos= Sol[ind]
-        fmin = fitness[ind]
-        # S=Sol.copy()
+        best_pos= Sol[ind].copy()
+        fmin = copy.copy(fitness[ind])
+
         sensory_modality = self.initial_sensory_modality
         while not self.stop:
-            X = Sol.copy()
+            X = np.full([self.M, self.n], np.nan)
             for i in range(self.M):
                 FP= sensory_modality*(fitness[i]**self.power_exponent)
                 if np.random.rand()>self.prob_switch:
@@ -44,7 +45,7 @@ class BOA_orig_syncE_syncG(NatureOpt):
                    
                 #Check if the simple limits/bounds are OK
                 x = np.clip(x, self.lb_x, self.ub_x)
-                X[i] = x
+                X[i] = x.copy()
                   
             # Evaluate new solutions
             FitnessNew = self.Evaluate_X(X=X) #Fnew represents new fitness values
@@ -52,14 +53,14 @@ class BOA_orig_syncE_syncG(NatureOpt):
             # If fitness improves (better solutions found), update then = selection
             for i in range(self.M):
                 if FitnessNew[i] <= fitness[i]:
-                    Sol[i] = X[i]
-                    fitness[i] = FitnessNew[i]
+                    Sol[i] = X[i].copy()
+                    fitness[i] = copy.copy(FitnessNew[i])
 
             # Update the current global best_pos
             for i in range(self.M):
                 if fitness[i]<=fmin:
-                    best_pos=Sol[i]
-                    fmin=FitnessNew[i]
+                    best_pos=Sol[i].copy()
+                    fmin=copy.copy(FitnessNew[i])
 
         
             #Update sensory_modality

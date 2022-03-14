@@ -25,16 +25,16 @@ class BOA_orig(NatureOpt):
         fitness = self.Evaluate_X(X = Sol)
         # find the global best
         ind = np.argmin(fitness)
-        best_pos= Sol[ind].copy()
+        best_pos = Sol[ind].copy()
         fmin = copy.copy(fitness[ind])
-        # S=Sol.copy()
+
         sensory_modality = self.initial_sensory_modality
         while not self.stop:
             for i in range(self.M):
                 FP= sensory_modality*(fitness[i]**self.power_exponent)
                 if np.random.rand()>self.prob_switch:
                     dis = np.random.rand()**2*best_pos - Sol[i]
-                    x=Sol[i]+dis*FP
+                    x = Sol[i]+dis*FP
                 else:
                     epsilon=np.random.rand()
                     JK = np.random.choice(self.M, 2, replace=False)
