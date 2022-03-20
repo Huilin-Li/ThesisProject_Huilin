@@ -39,7 +39,6 @@ class BA_orig(NatureOpt):
             #  Varying loundness (A) and pulse emission rate (r)
             r = self.r0*(1-math.exp(-self.gamma*t))
             A = self.alpha * self.A
-
             # Loop over all bats/solutions
             for i in range(self.M):
                 Freq = self.Freq_min+(self.Freq_max-self.Freq_min)*np.random.rand()
@@ -53,13 +52,11 @@ class BA_orig(NatureOpt):
                 fitness_temp = self.fitness_function(x)
                 # selection
                 if ((fitness_temp <= Fitness[i]) and (np.random.rand() > A)):
-                    Sol[i] = x # final new generated pop
-                    Fitness[i] = fitness_temp
-
+                    Sol[i] = x.copy() # final new generated pop
+                    Fitness[i] = copy.copy(fitness_temp)
                 # Update the current best solution = global best one
                 if Fitness[i]<=fmin:
                     best = Sol[i].copy()
                     fmin = copy.copy(Fitness[i])
-
             t=t+1
 
