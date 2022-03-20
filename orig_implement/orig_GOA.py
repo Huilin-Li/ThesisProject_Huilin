@@ -16,7 +16,7 @@ class GOA_orig(NatureOpt):
     def __call__(self):
         cMax=1
         cMin=0.00004
-        l = 1
+        l = 1 # they use 2
 
         # initialization
         GrassHopperPositions = np.random.uniform(self.lb_x, self.ub_x, (self.M, self.n))
