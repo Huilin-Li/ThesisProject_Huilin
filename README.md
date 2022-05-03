@@ -37,6 +37,8 @@ As shown in the picture, we did 47 There are four experiments.
 | ----- | ------- |
 | synchronous E | the way of evaluating is synchronous=evaluate the whole population together (at the same time) |
 | asynchronous E | the way of evaluating is asynchronous=evaluate the whole individuals one by one |
+| synchronous G | the way of calculating the global best individual (G) is synchronous=directly get the (G) in the updated whole population= the G is same to the whole individuals in the next round|
+| asynchronous G | the way of calculating the global best individual (G) is asynchronous=get the (G) by iteratively comparing the updated individuals one by one=the G might be different to the whole individuals in the next round |
 
 
 
@@ -46,6 +48,7 @@ As shown in the picture, we did 47 There are four experiments.
 | file name | usage | status | output name |
 | --------- | ----- | ------ | ------------|
 | orig_MBO.py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
+
 | orig_MBO_asyncE_asyncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
 
 
