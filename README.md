@@ -48,7 +48,7 @@ As shown in the picture, we did 47 There are four experiments.
 | file name | usage | status | output name |
 | --------- | ----- | ------ | ------------|
 | orig_MBO.py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
-
+| orig_MBO_asyncE_syncG.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
 | orig_MBO_asyncE_asyncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
 
 
