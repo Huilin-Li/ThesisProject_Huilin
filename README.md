@@ -32,12 +32,11 @@
 <a name="ep"></a>
 ## Experiments 
 As shown in the picture, we did 47 There are four experiments.
-![plot](all_data_figures_tables_in_thesis/py_file_name_content_balabala.png)
 <a name="ep1"></a>
-### experiment 1: 
-| file name | usage |
-| --------- | ----- |
-| SEP
+### orig_implement: 
+| file name | usage | status | output name |
+| --------- | ----- | ------ | ------------|
+| orig_MBO.py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
 
 
 
