@@ -32,6 +32,15 @@
 <a name="ep"></a>
 ## Experiments 
 As shown in the picture, we did 47 There are four experiments.
+
+| item | meaning |
+| ----- | ------- |
+| synchronous E | the way of evaluating is synchronous=evaluate the whole population together (at the same time) |
+| asynchronous E | the way of evaluating is asynchronous=evaluate the whole individuals one by one |
+
+
+
+
 <a name="ep1"></a>
 ### orig_implement: 
 | file name | usage | status | output name |
