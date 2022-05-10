@@ -4,12 +4,9 @@
   - [ Group 1 ](#ep1)
   - [ Group 2 ](#ep2)
   - [ Group 3 ](#ep3)
-- [ Benchmark Environment. ](#env)
+- [ Benchmark Environment ](#env)
 - [ Example. ](#exm)
-  - [ customized optimizer. ](#exm1)
-  - [ benchmark and comparison. ](#exm2)
-  - [ results of example experiment. ](#exm3)
-- [ Coding errors. ](#cod)
+- [ Tips ](#cod)
 
 <a name="ov"></a>
 ## Main work
@@ -23,9 +20,8 @@ UNIOA = (f, Init_x, Opt_x, C, T, S, Init_delta, Opt_delta)
 ## Experiments 
 We did three groups of experiments.
 <a name="ep1"></a>
-### Goup1 
-for avoding side effects
-
+### Group 1 
+The Group 1 is for avoiding side effects. In our many experiments, we found the way of evaluating the fitness and the way of calculating the global best individual might impact the performance of algorithms. The experimental results show that the way of evaluating the fitness will not impact the performance of algorithm, but the way of calculating the global best individual will.
 | item | meaning |
 | ----- | ------- |
 | synchronous E | the way of evaluating is synchronous=evaluate the whole population together (at the same time) |
@@ -33,6 +29,12 @@ for avoding side effects
 | synchronous G | the way of calculating the global best individual (G) is synchronous=directly get the (G) in the updated whole population= the G is same to the whole individuals in the next round|
 | asynchronous G | the way of calculating the global best individual (G) is asynchronous=get the (G) by iteratively comparing the updated individuals one by one=the G might be different to the whole individuals in the next round |
 
+<a name="ep2"></a>
+### Group2 
+
+
+<a name="ep3"></a>
+### Group3 
 
 
 
@@ -76,12 +78,7 @@ optional arguments:
   -r , --runs         Number of experiments executed per problem per instance per dimension (default: 5 runs).
 
 ```
-# Needed
-```
-Python 3.7.7
-Numpy 1.18.2
-IOHexperimenter
-```
+
 <a name="cod"></a>
 ## Tips for reproducing 
 1. avoid side effects of ``=``, must use ``copy.copy()`` somewhere. For example, when you need to create a new variable that is equal to the old variable, but not throw away the old one. Specifically, if you will use the right-variable in the following steps, please use ```copy.copy(single_number)/[list/array].copy()```. Moreover, ``def`` cannot avoid this kind of errors, and must use copy
