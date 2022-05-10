@@ -1,8 +1,10 @@
 # Standardizing Nature-inspired Algorithms: a unified framework UNIOA for seven swarm-based algorithms
 - [ Main Work ](#ov)
 - [ Experiments ](#ep)
-  - [ Experiment 1 ](#ep1)
-- [ Environment. ](#env)
+  - [ Group 1 ](#ep1)
+  - [ Group 2 ](#ep2)
+  - [ Group 3 ](#ep3)
+- [ Benchmark Environment. ](#env)
 - [ Example. ](#exm)
   - [ customized optimizer. ](#exm1)
   - [ benchmark and comparison. ](#exm2)
@@ -16,9 +18,13 @@ For solving the problem that most of the modern swarm-based optimization algorit
 UNIOA = (f, Init_x, Opt_x, C, T, S, Init_delta, Opt_delta)
 ```
 ![UNIOA_pseudocode](UNIOA_pseudocode.png)
+
 <a name="ep"></a>
 ## Experiments 
-As shown in the picture, we did 47 There are four experiments.
+We did three groups of experiments.
+<a name="ep1"></a>
+### Goup1 
+for avoding side effects
 
 | item | meaning |
 | ----- | ------- |
@@ -77,5 +83,5 @@ Numpy 1.18.2
 IOHexperimenter
 ```
 <a name="cod"></a>
-## Tips for reroducing 
-1. avoid side effects of ``=``, must use ``copy.copy()`` somewhere. For example, when you need to create a new variable that is equal to the old variable, but not throw away the old one. Specifically, if you will use the right-variable in the following steps, please use copy.copy(single_number)/[list/array].copy(). Moreover, ``def`` cannot avoid this kind of errors, and must use copy
+## Tips for reproducing 
+1. avoid side effects of ``=``, must use ``copy.copy()`` somewhere. For example, when you need to create a new variable that is equal to the old variable, but not throw away the old one. Specifically, if you will use the right-variable in the following steps, please use ```copy.copy(single_number)/[list/array].copy()```. Moreover, ``def`` cannot avoid this kind of errors, and must use copy
