@@ -1,4 +1,4 @@
-# Thesis Project
+# Standardizing Nature-inspired Algorithms: a unified framework UNIOA for seven swarm-based algorithms
 - [ Overview. ](#ov)
 - [ Experiment details. ](#ep)
   - [ Experiment 1 ](#ep1)
@@ -50,6 +50,7 @@ As shown in the picture, we did 47 There are four experiments.
 | orig_MBO.py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
 | orig_MBO_asyncE_syncG.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
 | orig_MBO_asyncE_asyncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
+
 
 
 
