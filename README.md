@@ -1,5 +1,4 @@
-# Standardizing Nature-inspired Algorithms: 
-# a unified framework UNIOA for seven swarm-based algorithms
+# Standardizing Nature-inspired Algorithms: a unified framework UNIOA for seven swarm-based algorithms
 - [ Overview. ](#ov)
 - [ Experiment details. ](#ep)
   - [ Experiment 1 ](#ep1)
