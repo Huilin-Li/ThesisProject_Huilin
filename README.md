@@ -5,8 +5,8 @@
   - [ Group 2 ](#ep2)
   - [ Group 3 ](#ep3)
 - [ Benchmark Environment ](#env)
-- [ Example. ](#exm)
-- [ Tips ](#cod)
+- [ Pseudo-code of algorithms in UNIOA ](#exm)
+- [ Notes ](#cod)
 
 <a name="ov"></a>
 ## Main work
@@ -32,21 +32,18 @@ Therefore, when we reproduced the original implementation, we kept the way of ev
 | asynchronous G | the way of calculating the global best individual (G) is asynchronous=get the (G) by iteratively comparing the updated individuals one by one=the G might be different to the whole individuals in the next round |
 
 <a name="ep2"></a>
-### Group2 
+### Group 2 
+The Group 2 is for verifying our unified framework can work correctly as their original framework.
 
-
-<a name="ep3"></a>
-### Group3 
-
-
-
-<a name="ep1"></a>
-### orig_implement: 
 | file name | usage | status | output name |
 | --------- | ----- | ------ | ------------|
 | orig_MBO.py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
 | orig_MBO_asyncE_syncG.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
 | orig_MBO_asyncE_asyncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
+
+
+<a name="ep3"></a>
+### Group3 
 
 
 
@@ -58,29 +55,13 @@ Therefore, when we reproduced the original implementation, we kept the way of ev
 
 Click [here](https://surfdrive.surf.nl/files/index.php/s/sffBTtaFT5Yynrx) to access all data and referenced papers used in this thesis project.
 
-# Data Science Lab
-1. mithril.liacs.nl
-2. octiron.liacs.nl
-3. duranium.liacs.nl
 
-# File Structure
 
-# Usage
-```
-usage: run.py [-h] -n  [-p] [-d] [-i] [-r]
 
-Execute Experiments on IOHanalyzer.
-
-optional arguments:
-  -h, --help          show this help message and exit
-  -n , --name         Optimizer will be executed.
-  -p , --problems     Problems used to optimize (default: from Problem-1 to Problem-24).
-  -d , --dimensions   Dimensions used to experiments (default: Dimension-5 and Dimension-20).
-  -i , --instances    Number of instances used to experiments (default: 5 instances).
-  -r , --runs         Number of experiments executed per problem per instance per dimension (default: 5 runs).
-
-```
 
 <a name="cod"></a>
-## Tips for reproducing 
+## Notes
 1. avoid side effects of ``=``, must use ``copy.copy()`` somewhere. For example, when you need to create a new variable that is equal to the old variable, but not throw away the old one. Specifically, if you will use the right-variable in the following steps, please use ```copy.copy(single_number)/[list/array].copy()```. Moreover, ``def`` cannot avoid this kind of errors, and must use copy
+2. mithril.liacs.nl
+3. octiron.liacs.nl
+4. duranium.liacs.nl
