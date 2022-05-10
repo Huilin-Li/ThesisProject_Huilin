@@ -22,6 +22,8 @@ We did three groups of experiments.
 <a name="ep1"></a>
 ### Group 1 
 The Group 1 is for avoiding side effects. In our many experiments, we found the way of evaluating the fitness and the way of calculating the global best individual might impact the performance of algorithms. The experimental results show that the way of evaluating the fitness will not impact the performance of algorithm, but the way of calculating the global best individual will.
+
+Therefore, when we reproduced the original implementation, we kept the way of evaluating fitness as its original way, but modified the way of calculating the global best individual as the way in our unified framework.
 | item | meaning |
 | ----- | ------- |
 | synchronous E | the way of evaluating is synchronous=evaluate the whole population together (at the same time) |
