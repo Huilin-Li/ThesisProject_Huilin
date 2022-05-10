@@ -1,6 +1,6 @@
 # Standardizing Nature-inspired Algorithms: a unified framework UNIOA for seven swarm-based algorithms
-- [ Overview. ](#ov)
-- [ Experiment details. ](#ep)
+- [ Main Work ](#ov)
+- [ Experiments ](#ep)
   - [ Experiment 1 ](#ep1)
 - [ Environment. ](#env)
 - [ Example. ](#exm)
@@ -10,24 +10,8 @@
 - [ Coding errors. ](#cod)
 
 <a name="ov"></a>
-## Overview
-1. motivation of this project:
-   1. recently proposed nature-inspired algorithms are not such novel and not such mysterious.
-   2. because they are repeating same concepts/ideas of some old typical algorithms.
-   3. this problem will mislead the research community(e.g. Algorithm design is no longer concerned with whether it really proposes an effect algorithm, but only with whether there is a new name algorithm)
-2. solution to the problem:
-    1. the novelty/special parts of algorithms will be easier to be found, if these algorithms could be discussed in only one environment.
-    2. this only one environment is such a place in which algorithms use same terminologies, 
-
-3. experiments to prove the solution is correct:
-
-4. conclusion:
-
-5. shortcomings:
-   
-6. comparison with other relative papers:
-
-6. future imagination:
+## Main work
+We proposed a unified framework UNIOA in which seven different swarm-based optimization algorithms can be represented in same terminologies with same tuples. Meanwhile, the positions of these tuples are also same when building up these seven algorithms.
 
 <a name="ep"></a>
 ## Experiments 
