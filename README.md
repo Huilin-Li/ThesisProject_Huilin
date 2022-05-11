@@ -11,6 +11,9 @@
 <a name="ov"></a>
 ## Main work
 For solving the problem that most of the modern swarm-based optimization algorithms are frequently repeating similar core ideas, we proposed a unified framework UNIOA in which seven different swarm-based optimization algorithms can be represented in same terminologies with same tuples. Meanwhile, the positions of these tuples are also same when building up these seven algorithms.
+
+![20_unified_term](20_unified_term.png)
+
 ```math
 UNIOA = (f, Init_x, Opt_x, C, T, S, Init_delta, Opt_delta)
 ```
@@ -24,6 +27,7 @@ We did three groups of experiments.
 The Group 1 is for avoiding side effects. In our many experiments, we found the way of evaluating the fitness and the way of calculating the global best individual might impact the performance of algorithms. The experimental results show that the way of evaluating the fitness will not impact the performance of algorithm, but the way of calculating the global best individual will.
 
 Therefore, when we reproduced the original implementation, we kept the way of evaluating fitness as its original way, but modified the way of calculating the global best individual as the way in our unified framework.
+
 | item | meaning |
 | ----- | ------- |
 | synchronous E | the way of evaluating is synchronous=evaluate the whole population together (at the same time) |
@@ -37,9 +41,16 @@ The Group 2 is for verifying our unified framework can work correctly as their o
 
 | file name | usage | status | output name |
 | --------- | ----- | ------ | ------------|
-| orig_MBO.py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
-| orig_MBO_asyncE_syncG.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
-| orig_MBO_asyncE_asyncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
+| orig_(GOA/MBO).py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
+| orig_(GOA/MBO)_asyncE_syncG.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
+| orig_(GOA/MBO)_asyncE_asyncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
+
+| orig_(CSA/MFO).py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
+| orig_(CSA/MFO)_asyncE.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
+
+| orig_(BA/BOA/PSO).py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
+| orig_(BA/BOA/PSO)_fix.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
+| orig_(BA/BOA/PSO)_syncE_syncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
 
 
 <a name="ep3"></a>
