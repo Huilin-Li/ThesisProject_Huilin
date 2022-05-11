@@ -34,9 +34,9 @@ Group 2 is for verifying whether our unified framework can work correctly as the
 
 Therefore, we conclude that our unified framework can safely replace the original framework of algorithms. 
 
-
 <a name="ep3"></a>
 ### Group3 
+Group 3 is for observing the performance of these seven selected algorithms in our unified framework. 
 
 
 
