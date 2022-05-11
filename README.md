@@ -24,33 +24,15 @@ UNIOA = (f, Init_x, Opt_x, C, T, S, Init_delta, Opt_delta)
 We did three groups of experiments.
 <a name="ep1"></a>
 ### Group 1 
-The Group 1 is for avoiding side effects. In our many experiments, we found the way of evaluating the fitness and the way of calculating the global best individual might impact the performance of algorithms. The experimental results show that the way of evaluating the fitness will not impact the performance of algorithm, but the way of calculating the global best individual will.
+Group 1 is for avoiding side effects. In our many experiments, we found the way of evaluating the fitness and the way of calculating the global best individual might impact the performance of algorithms. The experimental results show that the way of evaluating the fitness will not impact the performance of algorithm, but the way of calculating the global best individual will.
 
 Therefore, when we reproduced the original implementation, we kept the way of evaluating fitness as its original way, but modified the way of calculating the global best individual as the way in our unified framework.
 
-| item | meaning |
-| ----- | ------- |
-| synchronous E | the way of evaluating is synchronous=evaluate the whole population together (at the same time) |
-| asynchronous E | the way of evaluating is asynchronous=evaluate the whole individuals one by one |
-| synchronous G | the way of calculating the global best individual (G) is synchronous=directly get the (G) in the updated whole population= the G is same to the whole individuals in the next round|
-| asynchronous G | the way of calculating the global best individual (G) is asynchronous=get the (G) by iteratively comparing the updated individuals one by one=the G might be different to the whole individuals in the next round |
-
 <a name="ep2"></a>
 ### Group 2 
-The Group 2 is for verifying our unified framework can work correctly as their original framework.
+Group 2 is for verifying whether our unified framework can work correctly as their original framework. The experimental results show that the performance of algorithms in our unified framework is same as the performance of algorithms in their original framework.
 
-| file name | usage | status | output name |
-| --------- | ----- | ------ | ------------|
-| orig_(GOA/MBO).py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
-| orig_(GOA/MBO)_asyncE_syncG.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
-| orig_(GOA/MBO)_asyncE_asyncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
-
-| orig_(CSA/MFO).py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
-| orig_(CSA/MFO)_asyncE.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
-
-| orig_(BA/BOA/PSO).py  | reproduce original implementation|synchronous E + synchronous G | orig_MBO_syncE_syncG, orig_MBO |
-| orig_(BA/BOA/PSO)_fix.py  | modify original implementation|asynchronous E + synchronous G | orig_MBO_asyncE_syncG |
-| orig_(BA/BOA/PSO)_syncE_syncG.py  | modify original implementation|asynchronous E + asynchronous G | orig_MBO_asyncE_asyncG |
+Therefore, we conclude that our unified framework can safely replace the original framework of algorithms. 
 
 
 <a name="ep3"></a>
