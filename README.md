@@ -44,7 +44,7 @@ Group 3 is for observing the performance of these seven selected algorithms in o
 
 <a name="env"></a>
 ## Pseudo-code of algorithms in UNIOA
-
+> see ./pseudo_code_in_UNIOA
 
 
 <a name="pse"></a>
