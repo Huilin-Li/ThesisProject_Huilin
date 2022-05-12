@@ -40,7 +40,7 @@ Therefore, we conclude that our unified framework can safely replace the origina
 Group 3 is for observing the performance of these seven selected algorithms in our unified framework. 
 
 
-
+![va_dim_5](vs_dim_5.png)
 
 <a name="env"></a>
 ## Pseudo-code of algorithms in UNIOA
