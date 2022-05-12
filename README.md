@@ -55,7 +55,7 @@ Our experiments are built up in the <a href="https://iohprofiler.github.io/">IOH
 
 <a name="package"></a>
 ## UNIOA library
-> The general application of our unified framework is to design an auto-designer for swarm-based algorithms. A demo of 
+> The general application of our unified framework is to design an auto-designer for swarm-based algorithms. A demo of such an application is <a href="https://github.com/Huilin-Li/UNIOA">UNIOA</a>.
 
 
 
