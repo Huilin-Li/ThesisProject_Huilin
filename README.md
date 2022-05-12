@@ -21,7 +21,8 @@ UNIOA = (f, Init_x, Opt_x, C, T, S, Init_delta, Opt_delta)
 
 <a name="ep"></a>
 ## Experiments 
-We did three groups of experiments.
+We did three groups of experiments. Check [here](https://surfdrive.surf.nl/files/index.php/s/sffBTtaFT5Yynrx) for all experimental data used in this thesis project.
+
 <a name="ep1"></a>
 ### Group 1 
 Group 1 is for avoiding side effects. In our many experiments, we found the way of evaluating the fitness and the way of calculating the global best individual might impact the performance of algorithms. The experimental results show that the way of evaluating the fitness will not impact the performance of algorithm, but the way of calculating the global best individual will.
