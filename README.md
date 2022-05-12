@@ -5,8 +5,8 @@
   - [ Group 2 ](#ep2)
   - [ Group 3 ](#ep3)
 - [ Benchmark Environment ](#env)
-- [ Pseudo-code of algorithms in UNIOA ](#exm)
-- [ Notes ](#cod)
+- [ Pseudo-code of algorithms in UNIOA ](#pse)
+- [ Notes ](#note)
 
 <a name="ov"></a>
 ## Main work
@@ -42,14 +42,18 @@ Group 3 is for observing the performance of these seven selected algorithms in o
 
 
 
+<a name="env"></a>
+## Pseudo-code of algorithms in UNIOA
+
+
+
+<a name="pse"></a>
+## Benchmark Environment
 
 
 
 
-
-
-
-<a name="cod"></a>
+<a name="note"></a>
 ## Notes
 1. avoid side effects of ``=``, must use ``copy.copy()`` somewhere. For example, when you need to create a new variable that is equal to the old variable, but not throw away the old one. Specifically, if you will use the right-variable in the following steps, please use ```copy.copy(single_number)/[list/array].copy()```. Moreover, ``def`` cannot avoid this kind of errors, and must use copy
 2. mithril.liacs.nl
