@@ -47,10 +47,6 @@ Group 3 is for observing the performance of these seven selected algorithms in o
 
 
 
-Click [here](https://surfdrive.surf.nl/files/index.php/s/sffBTtaFT5Yynrx) to access all data and referenced papers used in this thesis project.
-
-
-
 
 
 <a name="cod"></a>
