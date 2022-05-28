@@ -14,6 +14,7 @@ For solving the problem that most of the modern swarm-based optimization algorit
 
 ![20_unified_term](https://github.com/Huilin-Li/ThesisProject_Huilin/20_unified_term.png)
 <img src=“https://github.com/Huilin-Li/ThesisProject_Huilin/20_unified_term.png”>
+www
 ```math
 UNIOA = (f, Init_x, Opt_x, C, T, S, Init_delta, Opt_delta)
 ```
