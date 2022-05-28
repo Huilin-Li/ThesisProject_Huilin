@@ -13,8 +13,8 @@
 For solving the problem that most of the modern swarm-based optimization algorithms are frequently repeating similar core ideas, we proposed a unified framework UNIOA in which seven different swarm-based optimization algorithms can be represented in same terminologies with same tuples. Meanwhile, the positions of these tuples are also same when building up these seven algorithms.
 
 ![20_unified_term](https://github.com/Huilin-Li/ThesisProject_Huilin/20_unified_term.png)
-<img src=“./20_unified_term.png”>
-www
+
+![alt text](https://github.com/Huilin-Li/ThesisProject_Huilin/blob/master/20_unified_term.png?raw=true)
 ```math
 UNIOA = (f, Init_x, Opt_x, C, T, S, Init_delta, Opt_delta)
 ```
