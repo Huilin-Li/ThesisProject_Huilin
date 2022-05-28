@@ -17,7 +17,8 @@ For solving the problem that most of the modern swarm-based optimization algorit
 ```math
 UNIOA = (f, Init_x, Opt_x, C, T, S, Init_delta, Opt_delta)
 ```
-![UNIOA_pseudocode](UNIOA_pseudocode.png)
+
+![UNIOA_pseudocode](https://user-images.githubusercontent.com/52614985/170840294-60e8e430-18a6-4319-906e-135cb471b9ee.png)
 
 <a name="ep"></a>
 ## Experiments 
