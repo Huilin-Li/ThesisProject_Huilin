@@ -41,7 +41,7 @@ Therefore, we conclude that our unified framework can safely replace the origina
 Group 3 is for observing the performance of these seven selected algorithms in our unified framework. 
 
 
-![va_dim_5](vs_dim_5.png)
+![vs_dim_5](https://user-images.githubusercontent.com/52614985/170840348-6c2d6abd-486f-40a8-8c0a-d825d5b60433.png)
 
 
 <a name="pse"></a>
